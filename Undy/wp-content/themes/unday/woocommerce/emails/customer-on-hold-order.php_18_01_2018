@@ -1,0 +1,139 @@
+<?php
+/**
+ * Customer on-hold order email
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/emails/customer-on-hold-order.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce/Templates/Emails
+ * @version 3.5.0
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+/*
+ * @hooked WC_Emails::email_header() Output the email header
+ */
+do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
+
+<?php /* translators: %s: Customer first name */ ?>
+
+
+
+<tr>
+  <td align="center" valign="top" style="padding: 0 85px;" class="padding" ><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+      <tbody>
+        <tr>
+          <td align="center" valign="top" style="font-family: 'Poppins', sans-serif; font-size: 25px; line-height: 28px; color: #000000; font-weight:900;"><?php printf( __( 'Hej %s,', 'woocommerce' ), $order->get_billing_first_name() ); ?></td>
+        </tr>
+		<tr>
+          <td align="center" valign="top" style="font-family: 'Poppins',sans-serif;font-size: 14px;line-height: 20px;color: #000000;font-weight: normal;padding: 18px 0;"><?php _e( 'Thanks for your order. It’s on-hold until we confirm that payment has been received. In the meantime, here’s a reminder of what you ordered:', 'woocommerce' ); ?></td>
+        </tr>
+      </tbody>
+    </table></td>
+</tr>
+<tr>
+  <td height="2" bgcolor="#c5c5c5" style="font-size: 0px; line-height: 0px;">&nbsp;</td>
+</tr>
+<tr>
+  <td style="padding: 30px 52px 55px;" class="padding"><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+      <tbody>
+        <tr>
+          <td align="center" valign="top"><img src="<?php echo get_bloginfo('template_url');?>/images/product.png" width="314" height="221" alt="" style="display: block;" border="0"/></td>
+        </tr>
+        <tr>
+          <td align="center" valign="top" style="font-family: 'Poppins', sans-serif; font-size: 25px; line-height: 28px; color: #000000; font-weight: 900;">Har du hørt om vores abonnementsløsning?</td>
+        </tr>
+        <tr>
+          <td align="center" valign="top" style="font-family: 'Nunito', sans-serif; font-size: 16px; line-height: 19px; color: #000000; padding: 30px 0 20px;">Ved at tilmelde dig vores abonnement, sender vi 2 par underbukser hver 3 måned og sørger dermed for, at du aldrig løber tør for underbukser. </td>
+        </tr>
+        <tr>
+          <td align="center" valign="top" style="padding: 0 120px;" class="padding"><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+              <tbody>
+                <tr>
+                  <td align="center" valign="top"><img src="<?php echo get_bloginfo('template_url');?>/images/img-1.png" width="59" height="59" alt="" style="display: block;" border="0"/></td>
+                </tr>
+                <tr>
+                  <td align="center" valign="top" style="font-family: 'Nunito', sans-serif; font-size: 16px; line-height: 19px; color: #000000; padding: 10px 0 25px;">Du kan spare op til 45% per par underbukser med vores abonnement. Samtidig tilbyder vi en prøvepakke til kun 1 kr. </td>
+                </tr>
+                <tr>
+                  <td align="center" valign="top"><img src="<?php echo get_bloginfo('template_url');?>/images/img-2.png" width="59" height="59" alt="" style="display: block;" border="0"/></td>
+                </tr>
+                <tr>
+                  <td align="center" valign="top" style="font-family: 'Nunito', sans-serif; font-size: 16px; line-height: 19px; color: #000000; padding: 10px 0 25px;">Alle abonnementer er uden binding. Vi går ind for gennemsigtighed, og derfor kan du altid opsige dit abonnement fra dag til dag. </td>
+                </tr>
+                <tr>
+                  <td align="center" valign="top"><img src="<?php echo get_bloginfo('template_url');?>/images/img-3.png" width="59" height="59" alt="" style="display: block;" border="0"/></td>
+                </tr>
+                <tr>
+                  <td align="center" valign="top" style="font-family: 'Nunito', sans-serif; font-size: 16px; line-height: 19px; color: #000000; padding: 10px 0 25px;">Der er altid gratis fragt på alle vores abonnementer. Leveringen er lynhurtig med kun 1-2 dages levering. </td>
+                </tr>
+                <tr>
+                  <td align="center" valign="top"><table width="232" border="0" cellspacing="0" cellpadding="0" align="center">
+                      <tbody>
+                        <tr>
+                          <td height="56" bgcolor="#0f202d" align="center" valign="middle" style="font-family: 'Poppins', sans-serif; font-size: 20px; color: #ffffff; font-weight: bold;"><a href="#" target="_blank" style=" line-height:56px; display: block; text-decoration: none; color: #ffffff;">PRØV I DAG</a></td>
+                        </tr>
+                      </tbody>
+                    </table></td>
+                </tr>
+              </tbody>
+            </table></td>
+        </tr>
+      </tbody>
+    </table></td>
+</tr>
+<tr>
+  <td height="2" bgcolor="#c5c5c5" style="font-size: 0px; line-height: 0px;">&nbsp;</td>
+</tr>
+<?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?> 
+
+<tr>
+  <td align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" >
+	  <tbody>
+	  	<?php 
+		do_action( 'woocommerce_email_order_details', $order, $sent_to_admin, $plain_text, $email );
+		/*
+		 * @hooked WC_Emails::order_meta() Shows order meta data.
+		 */
+		do_action( 'woocommerce_email_order_meta', $order, $sent_to_admin, $plain_text, $email );
+		?>
+		
+		
+		<tr>
+		  <td height="20" >&nbsp;</td>
+		</tr>
+		<tr>
+		  <td align="center" valign="top" style="border: 1px solid #e1e1e1; padding: 36px 45px 40px 34px; box-shadow: 1px 4px 18px 6px #e7e7e7;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			  <tbody>
+			  	<?php 
+				/*
+				 * @hooked WC_Emails::customer_details() Shows customer details
+				 * @hooked WC_Emails::email_address() Shows email address
+				 */
+				do_action( 'woocommerce_email_customer_details', $order, $sent_to_admin, $plain_text, $email );
+
+				?>
+				
+			  </tbody>
+			</table></td>
+		</tr>
+	  </tbody>
+	</table></td>
+</tr>
+
+
+<?php
+ 
+/*
+ * @hooked WC_Emails::email_footer() Output the email footer
+ */
+do_action( 'woocommerce_email_footer', $email );

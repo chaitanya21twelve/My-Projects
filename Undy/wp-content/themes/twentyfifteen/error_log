@@ -1,0 +1,36 @@
+[03-Nov-2019 12:12:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function language_attributes() in /home/undy/public_html/wp-content/themes/twentyfifteen/header.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/undy/public_html/wp-content/themes/twentyfifteen/header.php on line 12
+[03-Nov-2019 12:12:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function language_attributes() in /home/undy/public_html/wp-content/themes/twentyfifteen/header.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/undy/public_html/wp-content/themes/twentyfifteen/header.php on line 12
+[03-Nov-2019 12:31:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function language_attributes() in /home/undy/public_html/wp-content/themes/twentyfifteen/header.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/undy/public_html/wp-content/themes/twentyfifteen/header.php on line 12
+[09-Nov-2019 14:26:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function the_ID() in /home/undy/public_html/wp-content/themes/twentyfifteen/content-link.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/undy/public_html/wp-content/themes/twentyfifteen/content-link.php on line 13
+[11-Nov-2019 04:41:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/undy/public_html/wp-content/themes/twentyfifteen/archive.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/undy/public_html/wp-content/themes/twentyfifteen/archive.php on line 19
+[11-Nov-2019 21:20:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function _e() in /home/undy/public_html/wp-content/themes/twentyfifteen/author-bio.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/undy/public_html/wp-content/themes/twentyfifteen/author-bio.php on line 12
+[29-Nov-2019 21:50:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function the_ID() in /home/undy/public_html/wp-content/themes/twentyfifteen/content-link.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/undy/public_html/wp-content/themes/twentyfifteen/content-link.php on line 13
+[30-Nov-2019 00:07:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function _e() in /home/undy/public_html/wp-content/themes/twentyfifteen/author-bio.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/undy/public_html/wp-content/themes/twentyfifteen/author-bio.php on line 12
+[30-Nov-2019 03:46:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/undy/public_html/wp-content/themes/twentyfifteen/archive.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/undy/public_html/wp-content/themes/twentyfifteen/archive.php on line 19

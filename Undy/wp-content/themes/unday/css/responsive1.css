@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+/* CSS Document */
+@media screen and (max-width:1199px) {
+}
+
+@media screen and (max-width:991px) {
+}
+
+@media screen and (max-width:767px) {
+.Velkommen-text {
+	padding: 30px 15px;
+}
+.Velkommen-text p {
+	padding: 20px 0 35px;
+}
+.Velkommen-right, .Velkommen-left {
+	height: auto;
+	overflow: hidden;
+}
+.Medlemsskab-content {
+	padding-bottom: 15px;
+}
+.Medlemsskab-content p {
+	padding: 25px 0;
+}
+.Medlemsskab-box {
+	padding: 20px 0;
+}
+.dropdown-menu {
+	left: 0;
+	max-width: 100%;
+}
+.Medlemsskab-box {
+	padding: 20px 0;
+	margin-bottom: 30px;
+}
+}

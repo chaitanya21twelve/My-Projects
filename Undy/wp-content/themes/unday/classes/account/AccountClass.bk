@@ -1,0 +1,1008 @@
+<?php
+/**
+ * AccountClass
+ *
+ * The AccountClass Class.
+ *
+ * @class    AccountClass
+ * @parent BaseProduct
+ * @category Class
+ * @author   Codingkart
+ */  
+class AccountClass 
+ {	
+
+ /**
+   * Product Category for the Product Category class
+   * Sets up all the appropriate hooks and actions
+   * 
+   */ 
+	public function __construct(){
+
+        // create account endpoint
+	    add_action( 'init', array($this,'addWineClubWcEndpoint'));
+ 		
+		add_filter( 'woocommerce_account_menu_items', array($this,'WineClubWcAccountMenuItems'));	
+	 
+		add_action( 'woocommerce_account_subscription-box_endpoint', array($this,'subscription_box_setting_endpoint_callback'));
+
+		//add_action( 'woocommerce_account_invite-friend_endpoint', array($this,'invite_friend_setting_endpoint_callback'));
+        
+   }
+
+	public function has_active_subscription( $user_id=null ) {
+
+	    // if the user_id is not set in function argument we get the current user ID
+	    if( null == $user_id )
+	        $user_id = get_current_user_id();
+
+	    // Get all active subscrptions for a user ID
+	    $active_subscriptions = get_posts( array(
+	        'numberposts' => -1,
+	        'meta_key'    => '_customer_user',
+	        'meta_value'  => $user_id,
+	        'post_type'   => 'shop_subscription', // Subscription post type
+	        'post_status' => array('wc-active', 'wc-on-hold', 'wc-cancelled','wc-pending-cancel'), // Active subscription
+
+	    ) );
+	    // if
+	    if(!empty($active_subscriptions)) return true;
+	    else return false;
+	}
+
+
+   
+   public function addWineClubWcEndpoint() {
+
+	    add_rewrite_endpoint( 'subscription-box', EP_ROOT | EP_PAGES );
+
+	}
+
+	/**
+	* Insert the new endpoint into the My Account menu.
+	*
+	* @param array $items
+	* @return array
+	*/
+	public function WineClubWcAccountMenuItems( $items ) {
+
+		$items[ 'dashboard' ] = 'Velkommen';
+		$items[ 'orders' ] = 'Ordrehistorik';
+		$items[ 'edit-address' ] = 'Oplysninger';
+ 		$items[ 'customer-logout' ] = 'Log ud';
+
+		unset( $items[ 'edit-account'] );
+ 	    unset( $items[ 'payment-methods'] );
+ 	    unset( $items[ 'subscriptions'] );	 
+
+		if($this->has_active_subscription()){
+
+ 		    //$items[ 'subscription-box' ] = __( 'Medlemskab', 'wineclube' );
+	 	    $items = array_slice( $items, 0, 1, true ) 
+			+ array( 'subscription-box' => 'Medlemskab' )
+			+ array_slice( $items, 1, NULL, true );
+	   }
+
+	 /*  $items = array_slice( $items, 0, 4, true ) 
+			+ array( 'invite-friend' => 'inviter venner' )
+			+ array_slice( $items, 4, NULL, true );*/
+
+	    if(is_user_logged_in()){
+ 		   return $items;
+	    }else{
+	    	return array();
+	    }
+ 
+	}
+
+	public function invite_friend_setting_endpoint_callback( ){
+
+         echo '<div class="page-title"><h2 >Get Ready... Something Really Cool Is Coming Soon.</h2></div>';
+
+    }
+
+ 
+
+    public function subscription_box_setting_endpoint_callback( ){
+
+    	//    $subscriptions = get_posts( array(
+	    //     'numberposts' => -1,
+	    //     'post_type'   => 'shop_subscription', // Subscription post type
+	    //     'post_status' => array('wc-active', 'wc-on-hold'), //Active subscription    
+	    //     'order' => 'des',
+	    // ) );  
+
+	    //  print_r($subscriptions);
+
+
+
+
+    	// Get all of their subscriptions
+	    $subscriptions = get_posts( array(
+	        'numberposts' => -1,
+	        'post_type'   => 'shop_subscription', // Subscription post type
+	        'post_status' => array('wc-active', 'wc-on-hold', 'wc-cancelled','wc-pending-cancel'), //Active subscription    
+	        'order' => 'des',
+	        'meta_key'    => '_customer_user',
+	        'meta_value'  => get_current_user_id(),
+
+	    ) );  
+
+	    // $subscription = new WC_Subscription( 1436 );
+
+	    // $post_status = 'pending-cancel';
+ 
+  	  //   $subscription->update_status( $post_status ); 
+
+	    if($subscriptions){
+
+	        $BaseProduct = new BaseProduct(); 
+	        
+	        ?>
+
+		    <section class="product-selector">
+
+		        <div class="container">
+
+		        	<form action="" method="post" id="FormUpdate">
+
+		        		<input type="hidden" name="action" value="update_subscription_details">	        		
+
+			        	<div class="row selection-5">
+
+				        	<div class="Velkommen-text">
+
+			                   <h2 class="text-center" style="font-weight: 800;">Vælg din næste levering</h2>
+			                  
+			                  
+		 	                   <p class="text-center">Sammensæt din næste undy-boks ved at vælge hvilke underbukser vi skal sende afsted til dig næste gang.</p>
+		 	                   <br>
+		                        <div class="form-group b-select-wrap center">
+								 
+								    <select name="subcrition_array" id="subcrition_array" class="form-control b-select">
+								    	<?php 
+
+								    	$i = 1; 
+
+								    	$subscription_id = $post_status = '';
+
+								    	$current_user = wp_get_current_user();
+
+								    	$username = $current_user->display_name;
+
+							          	if(!empty($current_user->user_firstname)){
+
+							          	 	$username = $current_user->user_firstname;
+							           	}
+
+								    	if(!empty($subscriptions)){
+
+								    	foreach ($subscriptions as $key => $obj) {
+
+								    		if($i == 1){
+
+								    			$subscription_id = $obj->ID;
+
+								    			$post_status = $obj->post_status;
+
+								    		}
+
+								    		echo '<option value="'.$obj->ID.'">#0'.$obj->ID.' - <strong>' . esc_html( $username ) . '</strong></option>';
+								    		$i++;
+								    	}
+								        }else{
+								        	echo '<option value="">No subscription available.</option>';
+								        }
+								    	?> 
+							        </select>
+								 
+								</div>
+
+			                </div>
+
+							<div class="page-title">
+
+							    <h2 class="text-center" style="font-weight: 800;">Din Undy-boks</h2><br><br>
+
+						    </div>
+		 
+					    </div>
+
+			            <?php
+			                $user_cancel = get_post_meta($subscription_id, 'user_cancel', true);
+
+			                if(!empty($subscription_id)){
+			                    
+			                    if(!empty(get_post_meta( $subscription_id, '_schedule_next_payment', true ))){
+
+			                    	$months = $BaseProduct->get_month();
+			                    	$date = get_post_meta( $subscription_id, '_schedule_next_payment', true );
+			                    	$month = date('F', strtotime($date));
+			                        $schedule_next =  date('j. ', strtotime($date)) . $months[$month] . date(' Y', strtotime($date));
+
+			                    }else{
+			                    	$schedule_next = '';
+			                    }
+			                     
+			                    $subscription_vari = get_post_meta( $subscription_id, 'subscription_variation', true );
+			                    
+			                    if(!empty($subscription_vari)){
+
+
+			                       $term = get_term($subscription_vari['product_cat_id'],'product_cat');
+
+
+			                       if(!empty($subscription_vari)){
+	 		                            
+			                            $cat_name = $term->name;
+
+			                        }else{
+
+			                        	$cat_name = 'No Category';
+			                        }
+
+			                      
+
+			                        if(!empty($subscription_vari['color_cat_id'])){ 
+
+			                        	$color_array = explode(',', $subscription_vari['color_cat_id']);
+			                        	$i = 0; 
+			                        	$color_name = '';
+			                        	foreach ($color_array as $key => $ids) {
+			                        		if($i>0){
+			                        	    	$color_name .=', ';
+			                        	    }
+			                        	    $color = get_term($ids,'color-category');
+			                        	    $color_name .= $color->name;
+			                        	    
+			                        	    $i++;
+			                        	}
+	 		                        }else{
+
+		 	                        	$color_name = 'No Color';
+			                        }
+
+			                        if($subscription_vari['size_slug'] == 's'){
+			                        	$size_name = 'Small';
+			                        }else if($subscription_vari['size_slug'] == 'm'){
+			                        	$size_name = 'Medium';
+			                        }else if($subscription_vari['size_slug'] == 'l'){
+			                        	$size_name = 'Large';
+			                        }else if($subscription_vari['size_slug'] == 'xl'){
+			                        	$size_name = 'Extra Large';
+			                        }else if($subscription_vari['size_slug'] == 'xxl'){
+			                        	$size_name = 'Double Extra Large';
+			                        }else{
+			                        	$size_name = 'No Size';
+			                        } 
+							    }
+			                }
+
+			            ?> 
+					    <!-- <div class="row selection-4">
+					    
+					    	<div class="col-md-12">
+					    
+					    	    <div class="item-box">
+					    
+					    		                            <h4 class="text-center" style="font-weight: 600;">Informationer</h4>
+					    		                            </br>
+					    				                  
+					    			 	                    Underbukse Type: <b><span class="subcat_name"> <? echo $cat_name; ?></span></b><br>
+					    
+					    			 	                    Design: <b> <span class="subcolor_name"><? echo $color_name; ?></span></b><br>
+					    
+					    			 	                    Størrelse: <b> <span class="subsize_name"><? echo $size_name; ?></span></b><br>
+					    
+					    			 	                   </br>
+					    
+					    
+					    			 	                   <div class="abonnement-btn" style="margin-top: 0; <?php if($user_cancel == 'yes' ){ echo 'display:none;'; } ?>">
+					    
+					    		                        	    <a href="javascript:void(0);" id="product_look" style="background-color: #848490a3;" >Rediger</a>
+					                                                        </div>
+					    			 	                </div>
+					    
+					    			                </div>
+					    
+					    </div></br> -->
+
+					   </br>
+
+					    <div class="row selection-1" style="display:block;">
+
+					    	<?php
+					    	  $brief_cat = $shorts_cat='';
+
+					    	  $checkedCat = 'checked="checked"'; 
+					    	  $subscription_vari['product_cat_id'];
+
+					    	  if($subscription_vari['product_cat_id'] == 78){ $brief_cat = $checkedCat; }  
+					    	  if($subscription_vari['product_cat_id'] == 79){ $shorts_cat = $checkedCat; } 
+							?>
+
+					        <h3 class="text-center">Vælg din type underbukser</h3>
+ 
+							<div class="col-md-6">
+
+					          <div class="item-box <?php if(!empty($brief_cat)){ echo 'active'; } ?> cat-box-78"> 
+
+							  	<img src="https://undy.dk/dev/wp-content/themes/unday/images/tick.png" class="tick">
+
+					            <h5 class="text-center">Boxerbriefs</h5>
+
+					            <img src="https://undy.dk/dev/wp-content/themes/unday/classes/product/assets/images/boxerbriefs_icon.png" class="boxers">
+								<div style="display:none"> 
+									 
+									<input type="radio" name="product_cat" <?php if(!empty($brief_cat)){ echo $checkedCat; } ?> class="product_cat" value="78">
+
+								</div>
+
+								</div>
+
+					        </div>
+						
+							<div class="col-md-6">
+
+					          <div class="item-box <?php if(!empty($shorts_cat)){ echo 'active'; } ?> cat-box-79"> 
+
+							  	<img src="https://undy.dk/dev/wp-content/themes/unday/images/tick.png" class="tick">
+
+					            <h5 class="text-center">Boxershorts</h5>
+
+					            <img src="https://undy.dk/dev/wp-content/themes/unday/classes/product/assets/images/boxershorts_icon.png" class="boxers">
+								<div style="display:none">
+
+                                    <input type="radio" name="product_cat" <?php if(!empty($shorts_cat)){ echo $checkedCat; } ?> class="product_cat" value="79">
+
+								</div>
+
+								</div>
+
+					        </div>
+							
+					      </div>
+
+					    <div class="row selection-2" style="display:block">
+
+				          <h3 class="text-center">Vælg størrelse</h3>
+
+				          <p class="text-center icon-plus-sign" style="text-decoration: underline;">Størrelsesguide</p> 
+				    
+							<div class="col-md-12 wrapper">
+
+								<?php 
+
+								 $taxonomy_obj = get_terms( 'size-category', array(
+											        'hide_empty' => true,
+											        'orderby'    => 'term_id', 
+											        'order'       => 'ASC',
+											      ) );
+
+								foreach($taxonomy_obj as $size){ 
+									    $active = '';
+									    $checked = '';
+								        if($size->slug == $subscription_vari['size_slug']) {
+									       $checked = ' checked="checked"';
+								        	$active = ' active';
+								        }
+
+							            echo  '<div class="item-box box-'.$size->slug.$active.'" > <img src="'.get_bloginfo('template_url').'/images/tick.png" class="tick" />
+							                  <h1 class="text-center">'.$size->name.'</h1>
+							            <div style="display:none">
+							              <input type="radio" name="product_size"'.$checked.' data-slug="'.$size->slug.'" class="product_size" value="'.$size->term_id.'" />
+							            </div>
+							                </div>';
+							      }  
+
+								?>
+							</div> 
+					    
+					    </div>
+
+					    <div class="row selection-3" style="display:block">
+							<?php
+							    if(!empty($subscription_id)){
+							       echo $BaseProduct->getSubcriptionItemsAndCategoryHtml($subscription_id);
+							    }
+							?>
+ 		 			    </div>
+ 		 			    <div class="row selection-5" >
+ 		 			    	<div class="form-btn text-center" > 
+ 		 			    		<button id="product_update" style=" width: 40%; padding: 16px; font-size: 24px;" class="button" type="submit" >Opdater</button>
+ 		 			    	</div>
+ 		 			    </div>
+
+ 		        	</form>
+
+		        </div>
+
+		    </section> 
+
+			<section class="product-selector">
+			 
+			    <div class="container">
+
+			        <div class="row selection-4">
+
+						<div class="col-md-12">
+
+						    <div class="item-box">
+
+						    	<?php 
+
+						    	if(!empty($post_status)){ 
+
+						    		$show_status = $action = $buttton = $style = '' ; 
+						    		 
+						    		if($post_status == 'wc-active'){
+
+						    			$show_status = 'Aktivt';
+						    			$action = '2';
+						    			$buttton = 'Sæt i bero';
+
+
+						    		}else if($post_status == 'wc-on-hold'){ 
+
+						    			if($user_cancel != 'yes'){
+
+							    			$show_status = 'Sat i bero';
+							    			$action = '1';
+							    			$buttton = 'Aktiver her';
+
+							    		}else{
+
+							    			$show_status = 'Annulleret'; 
+							    		    $action = '3';
+							    		    $buttton = 'Annulleret'; 
+							    		}
+
+						    		}else{ //wc-pending-cancel
+
+ 						    			$show_status = 'Annulleret'; 
+						    		    $action = '0';
+						    		    $buttton = 'Annulleret';
+
+ 						    		}
+						    	?>
+
+						    	<div class="Velkommen-text">
+
+
+		                   			<h3 class="text-center" style="font-weight: 800;">Medlemskab</h3><br>
+
+		                         	<b class="post_status"><?php echo $show_status; ?></b><br><br>
+
+
+		                   			<h5 class="text-center" >Pris: <b>189 kr / 2 par underbukser</b></h5><br>
+
+		                         	Næste afsendelse: <b> <span class="subpayment_date"><? if($action == 2){ echo $schedule_next; } ?></span></b><br>
+
+		                         	<p class="text-center">Du har altid mulighed for at sætte dit medlemskab hos Undy i bero. Der er nemlig ingen opsigelsesperiode</p> 
+  
+                                   <?php  if($action == 3 || $action == 0){ $style ='display:none;'; } ?>
+
+                                    <div class="abonnement-btn action_btn" style="margin-top: 0;<?php echo $style; ?>">
+                                     	<a class="popup-with-zoom-anim open_popup" id="sub_hold" style="background-color: #848490a3;<?php if($action == 2){ echo 'display:inline-block;'; }else{ echo  'display:none;'; } ?>" href="#zoom_dialog">Sæt i bero</a>
+ 									</div>
+									<div class="abonnement-btn action_btn" style="margin-top: 0;<?php echo $style; ?>">
+										  <a href="javascript:void(0);" value="1" class="sub_status_change" id="sub_active" style="background-color: #848490a3;<?php if($action == 1){ echo 'display:inline-block;'; }else{echo 'display:none;'; } ?>">Aktiver her</a>	
+									</div>
+									<span class="text-center action_btn" style="<?php echo $style; ?>">
+ 										<a class="popup-with-zoom-anim" style="color: #35353ef7; text-decoration: underline;" href="#zoom_dialog_2">Opsig permanent</a>
+ 									</span>
+
+                                   <?php if($action == 3){ $style ='display:block;'; }else{ $style ='display:none;'; } ?>
+ 
+									<div class="abonnement-btn" id="wp_resubscribe" style="margin-top: 0; <?php echo $style; ?>">
+									    <a href="javascript:void(0);" id="wp_resubscribe_url" value="4" class="sub_status_change button resubscribe">Genaktiver her</a>
+								   </div>
+ 
+				                </div>
+
+                                   <!--  <div class="popup_action">
+                                       <a class="popup_button popup-with-zoom-anim" href="#zoom_dialog">S�t i bero</a>
+                                   </div> -->
+
+				            <?php  } ?>
+
+						    </div>
+
+						</div>
+
+				    </div>
+				</div>
+                            
+			</section>
+
+                    <!-- Popup Start  -->
+                    <div id="zoom_dialog" class="zoom-anim-dialog mfp-hide pause_popup common_popup_mini">
+                        <h3>Vi er kede af, at du &oslash;nsker at sætte dit medlemskab i bero.</h3>
+                        <div class="pause_icon">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/pause.png" alt="pause">
+                        </div>
+                        <h4>Er du sikker?</h4>
+                        <div class="popup_action">
+                             <a href="javascript:void(0);" class="bg_button">NEJ</a>
+                            <a href="javascript:void(0);"  value="2" class="sub_status_change border_button">JA S&AElig;T I BERO</a>
+                        </div>
+                    </div>           
+
+                    <div id="zoom_dialog_2" class="zoom-anim-dialog mfp-hide cancel_popup common_popup_mini">
+                        <h3>Vi er kede af, at du &oslash;nsker at forlade os <img class="sad_ic" src="<?php echo get_stylesheet_directory_uri(); ?>/images/sad_icon.png" alt="Sad"></h3>
+                        <div class="popup_inner_content">
+                            <h4>Hvad skyldes at du opsiger dit abonnement hos undy?</h4>
+                            <ul class="radio_item_list">
+                                <li class="c_check">
+                                    <input type="radio" name="cancel_reason" value="Prisen" checked="" id="radio_list_01">
+                                    <label for="radio_list_01">Prisen</label>
+                                </li>
+                                <li class="c_check">
+                                    <input type="radio" name="cancel_reason" checked="" id="radio_list_02" value="Leveringen sker for ofte" >
+                                    <label for="radio_list_02">Leveringen sker for ofte</label>
+                                </li>
+                                <li class="c_check">
+                                    <input type="radio" name="cancel_reason" checked="" id="radio_list_03" value="Kvaliteten p&aring; underbukserne" >
+                                    <label for="radio_list_03">Kvaliteten p&aring; underbukserne</label>
+                                </li>
+                                <li class="c_check">
+                                    <input type="radio" name="cancel_reason" checked="" id="radio_list_04" value="Udvalget var for lille" >
+                                    <label for="radio_list_04">Udvalget var for lille</label>
+                                </li>
+                                <li class="c_check">
+                                    <input type="radio" name="cancel_reason" checked="" id="radio_list_05" value="Farverne og designet p&aring; underbukserne" >
+                                    <label for="radio_list_05">Farverne og designet p&aring; underbukserne</label>
+                                </li>
+                                <li class="c_check">
+                                    <input type="radio" name="cancel_reason" checked="" id="radio_list_06" value="Pasformen" >
+                                    <label for="radio_list_06">Pasformen</label>
+                                </li>
+                                <li class="c_check">
+                                    <input type="radio" name="cancel_reason" checked="" id="radio_list_07" value="Andet" >
+                                    <label for="radio_list_07">Andet</label>
+                                </li>
+                            </ul>
+                            <div class="popup_comment_box">
+                                <textarea name="cancel_comment" id="cancel_comment" placeholder="Forklar gerne hvorfor" rows="2"></textarea>
+                            </div>
+                            <h4>Er du sikker ?</h4>                            
+                        </div>
+                        <div class="popup_action">
+                            <a href="javascript:void(0);" class="bg_button">NEJ</a>
+                            <a href="javascript:void(0);" value="3" class="sub_status_change border_button">JA OPSIG PERMANENT</a>
+                        </div>
+                    </div>
+
+                    
+
+
+
+			<script>
+
+				jQuery(document).ready(function(){
+
+					// jQuery('.open_popup').on('click', function(){
+					// 	newwindow=window.open($(this).attr('href'),'','height=200,width=150');
+					// 	if (window.focus) {newwindow.focus()}
+					// 	return false;
+					// });
+					 
+					jQuery(document).on('click',".bg_button",function(){ 
+						jQuery('.mfp-close').click();
+					});
+
+					jQuery(document).on('click',".sub_status_change",function(){ 
+ 
+						jQuery('.error').remove();
+
+						var status =  parseInt(jQuery(this).attr('value'));
+
+						var sub_id = jQuery("#subcrition_array").val();
+
+
+						if(status == '' || sub_id == '' || status == 0){
+
+							jQuery('#FormUpdate').after('<div class="alert alert-danger error"><strong> Hov. </strong> Something went wrong. please try again.</div>');
+
+							return false;
+						} 
+
+						var form_data = 'action=change_subscription_status&subscription_id='+sub_id+'&status='+status;
+
+						if(status == 3){
+ 
+							var cancel_reason = jQuery('input[name=cancel_reason]:checked').val();
+
+							var cancel_comment = jQuery('#cancel_comment').val();
+
+							if(cancel_reason == ''){
+
+								jQuery('.popup_inner_content').after('<span class="error" style="color:red;padding:8px">Vælg venligst abonnements annullering &aring;rsag.</span>');
+
+							    return false;
+
+							}else{
+
+							  form_data = form_data+'&cancel_reason='+cancel_reason+'&cancel_comment='+cancel_comment;
+							}
+						} 
+						 
+						jQuery(".product-selector").addClass('ajax-loader');
+
+						jQuery(this).prop('disabled', true);
+	 
+						var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>'; 
+
+						jQuery.ajax({
+	                        url:ajaxurl,
+	                        type:'POST',
+	                        dataType: 'json',
+	                        data: form_data,
+	                        success:function(response){
+
+		                        if(response.status == '1'){
+
+		                        	jQuery('#FormUpdate').after('<div class="alert alert-success error"><strong> Success. </strong> Successfull subscription status change.</div>');
+
+		                        	location.reload();
+
+								}else{
+
+									jQuery('#FormUpdate').after('<div class="alert alert-danger error"><strong> Hov. </strong> Something went wrong. please try again.</div>');
+									jQuery(this).prop('disabled', false);
+								}
+
+							   jQuery(".product-selector").removeClass('ajax-loader');	
+							}				 
+
+						  }); 
+	 
+						return false;					 
+					 
+
+					});
+
+					jQuery(document).on('click',"#product_look",function(){ 
+
+						jQuery('.row.selection-1').toggle();
+						jQuery('.row.selection-2').toggle();
+						jQuery('.row.selection-3').toggle();
+
+					});
+
+					jQuery(document).on('click',".selection-1 .item-box",function(){
+	 
+	                   jQuery(".selection-1 .item-box.active").removeClass("active"); 
+
+	                   jQuery(this).addClass("active");
+
+	                   jQuery(this).find(".product_cat").prop("checked",true);
+   	                    
+	                   var size_slug = jQuery('input[name="product_size"]:checked').attr('data-slug');
+ 
+	                   jQuery('.selection-2 .box-'+size_slug).click();
+
+	                    //var product_cat = jQuery('input[name="product_size"]:checked').val();
+	 
+					});
+
+				    jQuery(document).on('click touchstart',".selection-2 .item-box",function(){
+
+				    	jQuery('.error').remove();
+
+				    	jQuery(".product-selector").addClass('ajax-loader');
+
+	                    jQuery(".selection-2 .item-box.active").removeClass("active");
+
+	                    jQuery(this).addClass("active");
+
+	                    jQuery(".row.selection-3").html(' ');
+
+			            jQuery(this).find(".product_size").prop("checked",true);
+
+			            var size_id = jQuery(this).find(".product_size").val();
+
+			            var product_cat = jQuery('input[name="product_cat"]:checked').val();
+
+			            var sub_id = jQuery("#subcrition_array").val();
+
+			            var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+
+						var form_data = 'action=getItemList&subscription_id='+sub_id+'&product_cat='+product_cat+'&size_id='+size_id;
+
+						jQuery.ajax({
+	                        url:ajaxurl,
+	                        type:'POST',
+	                        dataType: 'json',
+	                        data: form_data,
+	                        success:function(response){
+	 
+		                        if(response.status == '1'){
+	 	                        	if(response.item_list != ''){
+		                        		jQuery(".row.selection-3").html(response.item_list);
+		                        	} 
+	 							}else{
+									alert("Something went wrong. Please try after some time");
+								}
+
+								jQuery(".product-selector").removeClass('ajax-loader');	
+							}				 
+
+						});
+	 
+					});
+					
+
+					jQuery("#subcrition_array").on('change',function(){ 
+
+						//jQuery('.row.selection-1').hide();
+
+						//jQuery('.row.selection-2').hide();
+
+						//jQuery('.row.selection-3').hide();
+
+						jQuery('.error').remove();
+
+						var sub_id = jQuery(this).val();
+
+						if(sub_id == ''){
+
+							alert("invalid subscription details ");
+
+							return false;
+						}
+						 
+						jQuery(".product-selector").addClass('ajax-loader');
+	 
+						var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+
+						var form_data = 'action=get_subscription_detail&subscription_id='+sub_id;
+
+						jQuery.ajax({
+	                        url:ajaxurl,
+	                        type:'POST',
+	                        dataType: 'json',
+	                        data: form_data,
+	                        success:function(response){
+
+		                        if(response.status == '1'){
+
+		                        	jQuery('.subpayment_date').html(response.payment_date);
+		                        	
+		                        	//jQuery('.subcat_name').html(response.cat_name);
+		                        	//jQuery('.subcolor_name').html(response.color_name);
+		                        	//jQuery('.subsize_name').html(response.size_name);
+
+		                        	//jQuery('#color_cat_id').val(response.color_id);
+		                        	var size_slug = response.size_slug;
+		                         	if( size_slug != ''){
+
+		                         		jQuery('.selection-2 .item-box').removeClass('active');
+		                        		jQuery('.selection-2 .box-'+size_slug).addClass('active');
+		                        		jQuery('.selection-2 .item-box.box-'+size_slug).find(".product_size").prop("checked",true);
+		                        	}
+		                        	var cat_id = response.cat_id;
+		                         	if( cat_id != ''){
+
+		                         		jQuery('.selection-1 .item-box').removeClass('active');
+		                        		jQuery('.selection-1 .cat-box-'+cat_id).addClass('active');
+		                        		jQuery('.selection-1 .item-box.cat-box-'+cat_id).find(".product_cat").prop("checked",true);
+		                        	}
+
+		                        	if(response.item_list != ''){
+		                        		jQuery(".row.selection-3").html(response.item_list);
+		                        	}
+
+ 		                        	jQuery(".post_status").html(response.sub_status);
+
+		                        	if(response.sub_action == 3){
+
+		                        		 jQuery(".action_btn").hide();
+		                        		 jQuery("#product_look").parent().hide();
+		                        		 jQuery("#wp_resubscribe").hide();
+		                        		 
+		                        	}else if(response.sub_action == 4){
+  
+		                        		jQuery(".action_btn").hide();
+		                        		jQuery("#product_look").parent().hide();
+		                        		jQuery("#wp_resubscribe").show();
+
+		                        	}else if(response.sub_action == 1){
+
+		                        		jQuery(".action_btn").show();
+		                        	    jQuery("#product_look").parent().show();
+		                        	    jQuery("#wp_resubscribe").hide();
+
+		                        	    jQuery("#sub_hold").hide();
+		                        	    jQuery("#sub_active").show();
+ 
+
+		                        	}else if(response.sub_action == 2){
+
+		                        		jQuery(".action_btn").show();
+		                        	    jQuery("#product_look").parent().show();
+		                        	    jQuery("#wp_resubscribe").hide();
+		                        	    jQuery("#wp_resubscribe").hide();
+		                        	    jQuery("#sub_hold").show();
+		                        	    jQuery("#sub_active").hide();
+		                        	     
+		                        	}else{ 
+
+ 		                        	    jQuery(".action_btn").hide();
+		                        	    jQuery("#product_look").parent().show();
+		                        	    jQuery("#wp_resubscribe").hide();
+		                        	}
+		 
+								}else{
+									alert("Something went wrong. Please try after some time");
+								}
+							  jQuery(".product-selector").removeClass('ajax-loader');	
+							}				 
+
+						  }); 
+	 
+						return false;
+
+					})
+
+				    jQuery("#FormUpdate").on('submit',function(e){ 
+
+	                    e.preventDefault();
+
+			            jQuery('.error').remove();
+
+				    	var sum = 0;
+	 
+						jQuery(".input-number").each(function (){
+
+			               sum += Number( jQuery(this).val());
+
+			            });
+
+						if( sum < 2 ){
+
+			                // minimum 2 
+			                jQuery(this).after('<div class="alert alert-danger error"><strong> Hov. </strong> Du mangler noget. Du skal vælge minimum 2 par underbukser.</div>'); // minimum 2 
+			                
+			                return false;
+			            }else if( sum > 2 ){
+
+			            	//maximum 2 
+			                jQuery(this).after('<div class="alert alert-danger error"><strong>Hov. </strong> Du var vist lidt for ivrig. Du kan maksimalt vælge 2 underbukser.</div>');
+
+			                return false;
+
+			            }else{ 
+
+			            	jQuery(".product-selector").addClass('ajax-loader');
+	 
+							var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+
+							var form_data = jQuery('#FormUpdate').serialize();
+
+							jQuery.ajax({
+		                        url:ajaxurl,
+		                        type:'POST',
+		                        dataType: 'json',
+		                        data: form_data,
+		                        success:function(response){
+
+			                        if(response.status == '1'){
+
+			                        	location.reload();
+
+									}else if(response.status == '0'){
+
+										jQuery('.row.selection-3').before(response.msg);
+
+									}else{
+
+										alert("Something went wrong. Please try after some time");
+									}
+
+									jQuery(".product-selector").removeClass('ajax-loader');	
+								}				 
+
+							});
+
+	 					}
+							return false;
+
+					})
+	                                
+				});
+	                        
+	            /* Quantity Function */
+	            jQuery(document).ready(function(){
+
+	                var quantitiy=1;
+
+	                //jQuery(".quantity-right-plus").on('click',function(e){
+	                jQuery(document).on('click',".quantity-right-plus",function(e){
+	                    // Stop acting like a button
+	                 
+	                    e.preventDefault();
+	                    // Get the field name
+	                     jQuery('.error').remove();
+
+	                     jQuery('.quantity-right-plus').attr("style","");
+	 
+	                    var vari_id = parseInt(jQuery(this).attr('data-variation_id'));
+	                    
+
+	                    var col_id = parseInt(jQuery(this).attr('data-color-id'));
+
+	                    var quantity = parseInt($('#quantity_'+vari_id+'.color_cat_'+col_id).val());
+	                    // If is not undefined
+	                 
+				    	var sum = 1;
+	 
+						jQuery(".input-number").each(function (){
+			               sum += Number( jQuery(this).val());
+			            });
+
+			            if( sum > 2 ){
+ 
+			                jQuery('.row.selection-3').before('<div class="alert alert-danger error"><strong>Hov. </strong> Du var vist lidt for ivrig. Du kan maksimalt vælge 2 underbukser.</div>');
+
+			                jQuery(this).css('color', 'red');
+
+			                return false;
+
+			            }else{
+
+		                    $('#quantity_'+vari_id+'.color_cat_'+col_id).show();
+
+		                    $('#quantity_'+vari_id+'.color_cat_'+col_id).val(quantity + 1);
+		                    // Increment
+	                    }
+	                });
+
+	                ///jQuery(".quantity-left-minus").on('click',function(e){
+	                jQuery(document).on('click',".quantity-left-minus",function(e){
+	                	 
+	                    // Stop acting like a button
+	                    e.preventDefault();
+
+	                    jQuery('.error').remove();
+
+	                    jQuery('.quantity-right-plus').attr("style","");
+	                    // Get the field name
+	                    var vari_id = parseInt(jQuery(this).attr('data-variation_id'));
+
+	                    var col_id = parseInt(jQuery(this).attr('data-color-id'));
+
+	                    var quantity = parseInt($('#quantity_'+vari_id+'.color_cat_'+col_id).val());
+	 
+	                     // If is not undefined
+	                        // Increment
+	                    if(quantity>1){
+
+	                        $('#quantity_'+vari_id+'.color_cat_'+col_id).val(quantity - 1);
+
+	                    }else{
+
+	                    	$('#quantity_'+vari_id+'.color_cat_'+col_id).val(0);
+	                    	$('#quantity_'+vari_id+'.color_cat_'+col_id).hide();
+	                    }
+	                });
+	            });     
+
+			</script>
+
+     <?php     
+
+       }else{
+
+       	echo '<div class="text-center"><h3 >No subscrition available.</h3></div>';
+
+       }
+
+    }	
+
+    
+
+
+}
+
+ new AccountClass();

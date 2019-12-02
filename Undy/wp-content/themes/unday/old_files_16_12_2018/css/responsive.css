@@ -1,0 +1,203 @@
+
+@media screen and (max-width:1680px) {
+.top-menu .nav>li>a {padding: 10px 5px;color: #080808;font-size: 15px;}
+.header-menu {padding: 20px 150px;}
+
+}
+@media screen and (max-width:1350px) {
+.header-menu {padding: 20px 0px;}
+
+}
+@media screen and (max-width:1366px) {
+.sadan_virker-right {width: 80%; right: -70%;}
+
+}
+@media screen and (max-width:1199px) {
+
+.top-menu .nav>li>a {padding: 10px 5px;font-size: 14px;}
+.logo {padding: 0 00;}
+.banner-right, .banner-left {height: 640px;}
+    
+.banner-text {padding-top: 190px;}
+.farve-btn a, .anmeldelser-btn a {padding: 10px;width: 100%;text-align: center;}
+    
+.modtag_morgen_details{width: 72%;}
+.modtag_morgen_details p{font-size: 12px; line-height: 18px;}
+.størrelse_min ul li{margin: 0 5px 5px 0;}
+}
+@media screen and (max-width:991px) {
+ul.nav.navbar-nav.left-menu, ul.nav.navbar-nav.right-menu { text-align: center; float: none; display: inline-block;}
+.logo {padding: 0;width: 100%;text-align: center;}
+.top-menu .nav>li>a {padding: 10px 10px;font-size: 16px;}
+header.header {padding: 15px 0;}
+.header-menu {padding: 10px 0px;}
+.right-menu .nav>li:last-child a {padding: 0;}
+.banner-text h2 {font-size: 30px;}    
+.banner-right, .banner-left {height: 540px;}
+.banner-text {padding-top: 150px;}
+
+.sadan_virker {padding:60px 0 0px;}
+.inviter-right-content {padding: 20px;}
+.inviter-right-content, .inviter-left-img, .inviter-left-img img {height: 600px;}
+.footer-content .item:nth-child(2n + 1){clear: both;}    
+.copy-right {text-align: center;}
+.copy-right ul li {float: none; display: inline-block;}
+.copy-right ul li:first-child {width: 100%;margin: 0px;}
+    
+.storrelse ul li a {padding: 2px 10px;width: 45px;height: 30px;}
+.farve ul li a {width: 50px;height: 30px;}
+.anmeldelser-btn {padding: 365px 0 0;}
+.progress-row p {width: 100%;}
+    
+.doxerbriefs_left{padding: 15px 10px;}
+.farve_min{padding: 15px 10px;}
+.størrelse_min{padding: 15px 10px;}
+.størrelse_min ul li{margin: 0 5px 5px 0;}
+.modtag_morgen{padding: 15px 10px 0;}
+.modtag_morgen_details{width: 72%;}
+.modtag_morgen_details p{font-size: 12px; line-height: 18px;}
+.category_min_text h3 a{font-size: 13px;}
+.category_min_text span{font-size: 13px;}
+.category_hading{margin: 0 0 30px ;}
+.category_hading h4{font-size: 20px;}
+}
+
+@media screen and (max-width:767px) {
+.logo {display: none;}
+.responsive-logo {display: inline-block;line-height: 49px;}
+ul.nav.navbar-nav.right-menu .cart-btn {display: none;} 
+.responsive-cart-btn {display: inline-block; margin: 10px;}
+.responsive-logo {max-width: 170px;}
+.right-sidebar {display: inline-block;float: right;position: relative;}
+ul.nav.navbar-nav.left-menu, ul.nav.navbar-nav.right-menu {display: block;}
+.top-menu .navbar-inverse .navbar-collapse, .top-menu .navbar-inverse .navbar-form {width: 300px;}    
+.top-menu {margin: 5px 0 0;}
+.navbar-inverse .navbar-toggle {border-color: #0e202d;background-color: #0e202d;}
+.top-menu .navbar-collapse {padding: 0;float: left;width: 100%;position: absolute;top: 66px;right: 0;right: 0;z-index: 999;border-bottom: 1px solid #000;}
+.navbar-nav {float: left;width: 100%;margin: 0;background: #fff;}
+.top-menu .navbar-inverse .navbar-nav > li {position: relative;float: left;width: 100%;text-align: left;}
+.top-menu .navbar-inverse .navbar-nav a, .navbar-inverse .navbar-nav a:focus, .navbar-inverse .navbar-nav a:hover {background-color: inherit;color: #2586e0;width: 100%;}
+.top-menu .navbar-inverse .navbar-nav > li > a {font-size: 15px;padding: 7px;padding-left: 15px;}
+.dropdown .dropdown-menu {position: relative; top: 0; width: 100%; background: #fff; box-shadow: inherit; border: 0px; padding-left: 20px;}
+
+.banner-right, .banner-left {height: auto;}
+.banner-text {padding: 50px 15px;}
+
+.abonnement-content {margin-top: 30px;}
+.abonnement-btn {margin-top: 30px;}
+section {padding: 40px 0;}
+.page-title h2 {font-size: 22px;}
+.sadan_virker-left {width: 100%;}
+.sadan_virker-right {position:static; width: 100%;transform: translate(0, 0)}
+
+.inviter-right-content {padding: 30px;  }
+.footer {padding: 30px 0;}
+.footer-bar {text-align: center;}
+.footer-bar ul{width: 100%;}
+.copy-right {margin-top: 40px;}
+.footer-bar .footer-social li {float: none; display: inline-block;}
+.footer-bar .footer-social ul {margin-bottom: 20px;}
+.footer-content {margin-top: 30px;}
+.copy-right {text-align: center;}
+.copy-right ul li {float: none; display: inline-block;}
+.copy-right ul li:first-child {width: 100%;margin: 0px;}
+.sadan_virker-right img {width: 100%;}
+.sadan_virker {padding: 0px;}
+.sadan_virker-left {padding: 15px 15px;}
+.inviter-section {padding-top: 0px;}
+.sadan_virker .container{padding: 0px;}
+
+.inviter-right-content, .inviter-left-img, .inviter-left-img img {height: auto;}
+.inviter-inner {position: static; transform: translate(0, 0); max-width: 100%;}
+
+.slid-img {float: left;width: auto;margin: 0 5px 5px 0;}
+.slid-img img {width: auto !important; height: 150px;}
+.products-details {padding-left: 0;padding-top: 20px;}
+.anmeldelser-btn {padding: 0;text-align: center;width: 100%;}
+.anmeldelser-btn a {width: auto;}
+.products-details {text-align: center;}
+.storrelse ul, .farve ul {float: none; display: inline-block;width: auto;}
+.storrelse p {display: table; margin: 0 auto;}
+.farve-btn { margin: 10px 0 0;}
+.bestil, .farve-btn p {text-align: left;}
+.beskrivelse-left {padding: 15px;}
+.beskrivelse {padding: 0px 0 30px;}
+.rating-box {padding: 15px;margin: 25px 0;}
+.w3-row-padding {padding: 0;}
+.w3-light-grey {width: 90%;}
+    
+.category_text{top:20%; transform: translate(0 , -20%;);}
+.boxerbriefs_min{margin: 0 0 20px;}
+.category_left{margin: 0 0 20px 0;}
+.category_hading{margin: 0 0 30px 0;}
+.category_hading h4{font-size: 20px;}
+.category_hading {margin: 0;}
+.category_list {margin-bottom: 20px;}
+.category_text .category_bar h2 {font-size: 30px;}
+.farve_min li {width: 30%;}
+.category_min_text h3 a, .category_min_text span {text-align: center;width: 100%;}
+}
+
+@media screen and (max-width:479px) {
+.slid-img {float: left;width: 31%;margin: 0 3px 5px;}
+}
+
+
+
+
+@media only screen and (max-width: 540px) {
+  .selection-3 .item-box{
+    display: block !important;
+    margin:20px auto !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .product-selector .selection-1 .item-box{
+    width:250px;
+    height:200px;
+    margin:20px auto;
+    padding: 10px;
+
+  }
+  .product-selector .boxers{
+    width:100px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .product-selector .selection-1 .item-box{
+    width:250px;
+    height:200px;
+    margin:0 auto;
+    padding: 0px;
+
+  }
+  .product-selector .boxers{
+    width:100px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+[20-Oct-2019 14:00:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/undy/public_html/wp-content/themes/twentysixteen/404.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/undy/public_html/wp-content/themes/twentysixteen/404.php on line 10
+[03-Nov-2019 12:12:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function language_attributes() in /home/undy/public_html/wp-content/themes/twentysixteen/header.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/undy/public_html/wp-content/themes/twentysixteen/header.php on line 13
+[03-Nov-2019 12:12:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function language_attributes() in /home/undy/public_html/wp-content/themes/twentysixteen/header.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/undy/public_html/wp-content/themes/twentysixteen/header.php on line 13
+[03-Nov-2019 12:31:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function language_attributes() in /home/undy/public_html/wp-content/themes/twentysixteen/header.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/undy/public_html/wp-content/themes/twentysixteen/header.php on line 13
+[29-Nov-2019 22:30:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/undy/public_html/wp-content/themes/twentysixteen/404.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/undy/public_html/wp-content/themes/twentysixteen/404.php on line 10
