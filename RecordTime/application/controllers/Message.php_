@@ -1,0 +1,209 @@
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
+class Message extends Public_controller
+{
+    public function __construct()
+    {
+        parent::__construct();
+        do_action('after_website_init');
+        $this->load->library('form_validation');
+        $this->load->model('message_model','message');
+    }
+	
+	public function sendMail()
+	{
+//		$config = Array(
+//		  'protocol' => 'smtp',
+//		  'smtp_host' => 'smtp.gmail.com',
+//		  'smtp_port' => 465,
+//		  'smtp_timeout' => '30',
+//		  'mailpath' => '/usr/sbin/sendmail',
+//		  'smtp_user' => 'chaitanya.21twelve@gmail.com', // change it to yours
+//		  'smtp_pass' => '@Patwardhan2018', // change it to yours
+//		  'mailtype' => 'html',
+//		  'charset' => 'iso-8859-1',
+//		  'wordwrap' => TRUE
+//		);
+//
+//		$message = 'test message';
+//		$this->load->library('email', $config);
+//		$this->email->set_newline("\r\n");
+//		$this->email->from('chaitanya.21twelve@gmail.com'); // change it to yours
+//		$this->email->to('chaitanya@21twelveinteractive.com');// change it to yours
+//		$this->email->subject('Test');
+//		$this->email->message($message);
+//		
+//		if($this->email->send())
+//		{
+//			echo 'Email sent.';
+//		}else{
+//		 	show_error($this->email->print_debugger());
+//		}
+		
+		$this->load->library('email');
+
+		$config['protocol']    = 'smtp';
+
+		$config['smtp_host']    = 'smtp.gmail.com';
+
+		$config['smtp_port']    = 587;
+		
+		$config['mailpath'] = '/usr/sbin/sendmail';
+
+		$config['smtp_timeout'] = '30';
+
+		$config['smtp_user']    = 'chaitanya.21twelve@gmail.com';
+
+		$config['smtp_pass']    = '@Patwardhan2018';
+
+		$config['charset']    = 'utf-8';
+
+		//$config['newline']    = "\r\n";
+
+		$config['mailtype'] = 'text'; // or html
+
+		//$config['validation'] = TRUE; // bool whether to validate email or not      
+
+		$this->email->initialize($config);
+		
+		$this->email->set_newline("\r\n"); 
+
+
+		$this->email->from('chaitanya.21twelve@gmail.com', 'sender_name');
+		$this->email->to('chaitanya@21twelveinteractive.com'); 
+
+
+		$this->email->subject('Email Test');
+
+		$this->email->message('Testing the email class.');  
+
+		if($this->email->send()){
+			echo "Email Sent";
+		}else{
+			echo $this->email->print_debugger();
+		}
+	}
+	
+
+    public function index()
+    {
+		
+       	$_SESSION['recipient_id'] = $_GET['recipient_id'];
+		$data['user_id'] = $this->session->userdata['userid'];
+		$data['recipient_id'] = $_SESSION['recipient_id'];
+		
+		//$this->sendMail();
+
+		
+		
+		
+		$data['messages'] = $this->message->getRows(array('from_id'=>$this->session->userdata['userid'], 'to_id'=>$data['recipient_id']));
+		
+		
+		if($this->input->post('sendMessage')){
+			
+			//echo "<pre>"; print_r($_POST); exit;
+			
+            $this->form_validation->set_rules('message', 'Message', 'required');
+
+            $messageData = array(
+				'to_id' => $this->input->post('to_id'),
+				'from_id' => $this->input->post('from_id'),
+				'thread_id' => $this->input->post('thread_id'),
+				'attachments' => '',
+				'message' => $this->input->post('message')
+                
+            );
+
+				
+            if($this->form_validation->run() == true){
+                $addmessage = $this->message->addmessage($messageData);
+                if($addmessage){
+					
+					$from_email = "chaitanya.21twelve@gmail.com"; 
+					//$to_email = $this->input->post('email'); 
+					$to_email = "chaitanya@21twelveinteractive.com";
+
+					 //Load email library 
+					//$this->load->library('email'); 
+
+					$this->email->from($from_email, 'Cp'); 
+					$this->email->to($to_email);
+					$this->email->subject('Email Test'); 
+					$this->email->message('Testing the email class.'); 
+
+					 //Send mail 
+					if($this->email->send()) {
+						$this->session->set_flashdata("email_sent","Email sent successfully."); 
+					}else { 
+         				$this->session->set_flashdata("email_sent","Error in sending Email."); 
+					}
+					
+                    redirect('/message?recipient_id=18');
+                }else{
+                    $data['error_msg'] = 'Some problems occured, please try again.';
+                }
+            }
+        }
+		
+
+        $data['title'] = 'Messages';
+        $this->data    = $data;
+        $this->view    = 'messages/dashboard';
+        $this->layout();
+    }
+	
+	
+	public function add_message(){
+		
+		 $this->form_validation->set_rules('message', 'Message', 'required');
+
+            $messageData = array(
+				'to_id' => $this->input->post('to_id'),
+				'from_id' => $this->input->post('from_id'),
+				'thread_id' => $this->input->post('thread_id'),
+				'attachments' => '',
+				'message' => $this->input->post('message')
+                
+            );
+
+				
+            if($this->form_validation->run() == true){
+                $addmessage = $this->message->addmessage($messageData);
+                if($addmessage){
+					
+					$from_email = "chaitanya.21twelve@gmail.com"; 
+					//$to_email = $this->input->post('email'); 
+					$to_email = "chaitanya@21twelveinteractive.com";
+
+					 //Load email library 
+					//$this->load->library('email'); 
+
+					$this->email->from($from_email, 'Cp'); 
+					$this->email->to($to_email);
+					$this->email->subject('Email Test'); 
+					$this->email->message('Testing the email class.'); 
+
+					 //Send mail 
+					if($this->email->send()) {
+						$this->session->set_flashdata("email_sent","Email sent successfully."); 
+					}else { 
+         				$this->session->set_flashdata("email_sent","Error in sending Email."); 
+					}
+					
+                    //redirect('/message');
+                }else{
+                    $data['error_msg'] = 'Some problems occured, please try again.';
+                }
+            }
+	}
+//	public function msgboard()
+//    {
+//        $data['title'] = _l('messages');
+//        $this->data    = $data;
+//        $this->view    = 'messages/dashboard';
+//        $this->layout();
+//    }
+
+    
+}

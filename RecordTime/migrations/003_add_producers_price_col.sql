@@ -1,0 +1,2 @@
+ALTER TABLE producers
+ADD COLUMN price DECIMAL(10, 2);

@@ -1,0 +1,211 @@
+/* This is loaded in head.html */
+
+* {
+  box-sizing: border-box !important;
+}
+
+/* overwrite bootstrap */
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/*
+ *
+ *  Projects Dashboard Page
+ *  TODO: This should only be loaded on /project/dashboard, but is loaded on every page.
+ *
+ */
+
+.ProjectsDashboard__Title {
+  position: relative;
+}
+
+.ProjectsDashboard__Title a {
+  bottom: 0;
+  right: 0; */
+  width: 200px;
+  background-color: #E52806;
+  color: white;
+  border: 1px solid white;
+  float: right;
+  border-radius: 1px;
+  text-align: left;
+  position: relative;
+  top: 4em;
+}
+
+.ProjectsDashboard__Title a svg{
+  float: right;
+}
+
+
+.ProjectsDashboard__Title h1,
+.ProjectsDashboard__Title a {
+  display: inline-block;
+}
+
+.ProjectsDashboard {
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.ProjectList {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.ProjectItem {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 9em;
+  width: 90vw;
+  max-width: 1000px;
+  margin-bottom: 2em;
+  font-size: 1em;
+}
+
+.ProjectItem--overlay {
+  background-color: rgba(0,0,0,.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.ProjectItem img {
+  border-radius: 100%;
+  height: 4em;
+  margin: 2em 0;
+}
+
+.ProjectItem h3 {
+  color: #009CD5 !important;
+}
+
+.ProjectItem__Details {
+  background: #FFFFFF;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.ProjectItem__Details p {
+  margin: 0;
+}
+
+.ProjectItem--overlay .details {
+    text-align: center;
+}
+
+.ProjectItem--overlay button {
+    text-align: center;
+    background: #009CD5;
+    color: white;
+    border-radius: 10%;
+    border: 1px solid white;
+}
+
+.pdf-change button {
+  display: block;
+  background-color: white;
+  width: 110px;
+  margin-top: 1em;
+  height: 2em;
+}
+
+
+
+/*
+*
+* /search page
+*
+*/
+
+.Search .form-container {
+  height: 6em;
+  padding: 1em;
+  display: inline-block;
+}
+
+.Search .form-container form {
+  display: inline-block;
+}
+
+.Search .form-container > div {
+  display: inline-block;
+}
+
+.Search .form-container input {
+  height: 4em;
+}
+
+.Search .form-container input[type='text'] {
+  width: 50vw;
+  max-width: 500px;
+}
+
+.Search .form-container input[type='submit'] {
+  background-color: #545454;
+  width: 4em;
+  color: white;
+}
+
+.Search .form-container button {
+  background-color: #545454;
+  color: white;
+  height: 4em;
+  border: none;
+  width: 4em;
+}
+
+
+.Search .result.count,
+.Search .filter-buttons {
+  display: inline-block;
+  height: 4em ;
+  padding: 0 1em;
+  border-right: 1px solid grey;
+}
+
+.Search .ResultRow {
+  background: white;
+  border: 1px solid grey;
+  margin: 1em 0;
+}
+
+.Search .ResultRow img {
+  height: 3em;
+  display: inline-block;
+  border-radius: 3em;
+}
+
+.Search .ResultRow h4 {
+  display: inline-block;
+  padding-left: 1em;
+}
+
+.Search .ResultRow h4,
+.Search .ResultRow h5 {
+  font-size: 1.1em;
+  line-height: 3em;
+  font-weight: bold;
+  color: black;
+  font-weight: 500;
+}
+
+.Search .ResultRow > div {
+  display: inline-block;
+}
+
+.Search .ResultRow .MinorDetails {
+  padding-left: 4em;
+}
