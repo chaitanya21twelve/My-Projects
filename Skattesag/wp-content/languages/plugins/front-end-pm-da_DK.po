@@ -1,0 +1,1196 @@
+# Translation of Plugins - Front End PM - Stable (latest release) in Danish
+# This file is distributed under the same license as the Plugins - Front End PM - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-07-08 18:20:52+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: da_DK\n"
+"Project-Id-Version: Plugins - Front End PM - Stable (latest release)\n"
+
+#: templates/viewmessage.php:30
+msgid "Toggle Messages"
+msgstr "Sorter omvendt"
+
+#: templates/directory.php:13
+msgid "Search Users"
+msgstr "Søg brugere"
+
+#: admin/class-fep-pro-info.php:196
+msgid "New message subject."
+msgstr "Emne ny besked"
+
+#: admin/class-fep-pro-info.php:234
+msgid "Announcement subject."
+msgstr "Annoncering emne"
+
+#: functions.php:853
+msgid "RE:"
+msgstr "SV:"
+
+#: includes/class-fep-message.php:330 includes/class-fep-message.php:334
+#: includes/class-fep-message.php:338 includes/class-fep-message.php:342
+#: includes/class-fep-message.php:346
+msgid "%s message"
+msgid_plural "%s messages"
+msgstr[0] "%s besked"
+msgstr[1] "%s beskeder"
+
+#: admin/class-fep-admin-settings.php:70 admin/class-fep-admin-settings.php:71
+msgid "Messages to show per page"
+msgstr "Meddelelser pr. side"
+
+#: admin/class-fep-admin-settings.php:64
+msgid "Must have <code>[front-end-pm]</code> in content."
+msgstr "Du skal have <code>[front-end-pm]</code> i indhold."
+
+#: admin/class-fep-admin-settings.php:62
+msgid "Front End PM Page"
+msgstr "Front End PM Page"
+
+#: admin/class-fep-admin-settings.php:50
+msgid "Use Current Page"
+msgstr "Anvend denne side"
+
+#: admin/class-fep-admin-settings.php:32 admin/class-fep-admin-settings.php:753
+#: includes/class-fep-menu.php:51
+msgid "Settings"
+msgstr "Indstillinger"
+
+#: admin/class-fep-admin-settings.php:86
+msgid "Time delay"
+msgstr "Tidsforsinkelse"
+
+#: admin/class-fep-admin-settings.php:78 admin/class-fep-admin-settings.php:79
+msgid "Maximum user per page in Directory"
+msgstr "Maksimalt antal brugere pr. side i brugeroversigten i Frontend"
+
+#: admin/class-fep-admin-settings.php:102
+msgid "Editor Type"
+msgstr "Redigerings type"
+
+#: admin/class-fep-admin-settings.php:95
+msgid "add or override."
+msgstr "tilføj eller overskriv"
+
+#: admin/class-fep-admin-settings.php:94
+msgid "Custom CSS"
+msgstr "Custom CSS"
+
+#: admin/class-fep-admin-settings.php:87
+msgid "Time delay between two messages send by a user in minutes (0 = No delay required)"
+msgstr "Tidsforsinkelse mellem to beskeder afsendt af en bruger i minutter (0 = Ingen forsinkelse påkrævet)"
+
+#: admin/class-fep-admin-settings.php:115
+msgid "Parent Message Status"
+msgstr "Status på overliggende besked"
+
+#: admin/class-fep-admin-settings.php:107
+msgid "Textarea"
+msgstr "Tekstområde"
+
+#: admin/class-fep-admin-settings.php:105
+msgid "Wp Editor"
+msgstr "WP Editor"
+
+#: admin/class-fep-admin-settings.php:116
+msgid "Parent Message status when sent from front end."
+msgstr "Overliggende besked status, når sendes fra Frontend."
+
+#: admin/class-fep-admin-settings.php:118
+#: admin/class-fep-admin-settings.php:130
+msgid "Publish"
+msgstr "Udgiv"
+
+#: admin/class-fep-admin-settings.php:119
+#: admin/class-fep-admin-settings.php:131
+msgid "Pending"
+msgstr "Afventer"
+
+#: admin/class-fep-admin-settings.php:127
+msgid "Reply Message Status"
+msgstr "Status på svar"
+
+#: admin/class-fep-admin-settings.php:128
+msgid "Reply Message status when sent from front end."
+msgstr "Giv besked status, når der afsendes fra Frontend."
+
+#: admin/class-fep-admin-settings.php:141
+msgid "Allow to attach attachment with message?"
+msgstr "Tillad at vedhæfte filer i besked?"
+
+#: admin/class-fep-admin-settings.php:140
+msgid "Allow Attachment?"
+msgstr "Tillad vedhæftning?"
+
+#: admin/class-fep-admin-settings.php:147
+msgid "Maximum size of attachment?"
+msgstr "Maks størrelse på vedhæftet fil"
+
+#: admin/class-fep-admin-settings.php:148
+msgid "Use KB, MB or GB.(eg. 4MB)"
+msgstr "Brug KB, MB eller GB (f.eks. 4 MB)"
+
+#: admin/class-fep-admin-settings.php:154
+msgid "Maximum Number of attachment?"
+msgstr "Max tilladte antal vedhæftninger"
+
+#: admin/class-fep-admin-settings.php:162
+msgid "Hide Directory from front end?"
+msgstr "Skjul bruger register fra frontend?"
+
+#: admin/class-fep-admin-settings.php:163
+#: admin/class-fep-admin-settings.php:198
+msgid "Always shown to Admins."
+msgstr "Altid vist for Admins."
+
+#: admin/class-fep-admin-settings.php:197
+msgid "Hide Autosuggestion when typing recipient name?"
+msgstr "Skjul autoudfyldelse når modtagernavn indtastes"
+
+#: admin/class-fep-admin-settings.php:207
+msgid "Message view"
+msgstr "Besked visning"
+
+#: admin/class-fep-admin-settings.php:179
+msgid "Hide Branding Footer?"
+msgstr "Skjul Branding Footer?"
+
+#: admin/class-fep-admin-settings.php:171
+msgid "Hide site wide notification in header?"
+msgstr "Skjul brugernotifikationen om ny besked i header"
+
+#: admin/class-fep-admin-settings.php:210
+msgid "Individual"
+msgstr "Enkeltvis"
+
+#: admin/class-fep-admin-settings.php:209
+msgid "Threaded"
+msgstr "Trådet"
+
+#: admin/class-fep-admin-settings.php:221
+msgid "Announcements per page"
+msgstr "Meddelelser pr. side"
+
+#: admin/class-fep-admin-settings.php:222
+msgid "Announcements to show per page"
+msgstr "Meddelelser pr. side"
+
+#: admin/class-fep-admin-settings.php:231
+msgid "Send email?"
+msgstr "Send e-mail?"
+
+#: admin/class-fep-admin-settings.php:232
+msgid "Send email to all users when a new announcement is published?"
+msgstr "Send e-mail til alle brugere, når en ny meddelelse er offentliggjort?"
+
+#: admin/class-fep-admin-settings.php:252
+msgid "HTML"
+msgstr "HTML"
+
+#: admin/class-fep-admin-settings.php:250
+msgid "Email Content Type"
+msgstr "Email Indholdstype"
+
+#: admin/class-fep-admin-settings.php:253
+msgid "Plain Text"
+msgstr "Uformatteret tekst (*.txt)"
+
+#: admin/class-fep-admin-settings.php:262
+msgid "From Name"
+msgstr "Fra Navn"
+
+#: admin/class-fep-admin-settings.php:263
+msgid "All email send by Front End PM plugin will have this name as sender."
+msgstr "Alle e-mail sendt med frontend PM plugin vil have dette navn som afsender."
+
+#: admin/class-fep-admin-settings.php:271
+msgid "From Email"
+msgstr "Fra E-mail"
+
+#: admin/class-fep-admin-settings.php:272
+msgid "All email send by Front End PM plugin will have this email address as sender."
+msgstr "Alle e-mail sendt af Front End PM plugin vil have denne e-mail-adresse som afsender."
+
+#: admin/class-fep-admin-settings.php:239
+msgid "Valid email address for \"to\" field of announcement email"
+msgstr "Gyldig \"til\" e-mail-adresse i meddelelses e-mail"
+
+#: admin/class-fep-admin-settings.php:240
+msgid "All users email will be in \"Bcc\" field."
+msgstr "Alle brugere e-mail vil være i \"Bcc\" feltet."
+
+#: admin/class-fep-admin-settings.php:306
+msgid "Who can send reply?"
+msgstr "Hvem kan sende svar?"
+
+#: admin/class-fep-admin-settings.php:296
+msgid "Who can send new message?"
+msgstr "Hvem kan sende ny besked?"
+
+#: admin/class-fep-admin-settings.php:286
+msgid "User must have access permission to send new message or reply."
+msgstr "Bruger skal have  tilladelse til at sende ny besked eller svare"
+
+#: admin/class-fep-admin-settings.php:284
+msgid "Who can access message system?"
+msgstr "Hvem har adgang til beskedsystemet"
+
+#: admin/class-fep-admin-settings.php:314
+msgid "Whitelist Username"
+msgstr "Whitelist Brugernavn"
+
+#: admin/class-fep-admin-settings.php:315
+msgid "Separated by comma. These users have all permission if blocked by roll also."
+msgstr "Adskilt af komma. Disse brugere har alle tilladelse, selv hvis blokeret af rolle."
+
+#: admin/class-fep-admin-settings.php:322
+msgid "Blacklist Username"
+msgstr "Blacklist Brugernavn"
+
+#: admin/class-fep-admin-settings.php:477 includes/class-fep-form.php:331
+msgid "No Function or Hook defined for %s field type"
+msgstr "Ingen Funktion eller Hook defineret for %s felttype"
+
+#: admin/class-fep-admin-settings.php:334
+msgid "Max messages a %s can keep in box? (0 = Unlimited)"
+msgstr "Maks meddelelser en %s kan have ? (0 = ubegrænset)"
+
+#: admin/class-fep-admin-settings.php:323
+msgid "Separated by comma. These users have NO permission if allowed by roll also."
+msgstr "Adskilt af komma. Disse brugere har ingen tilladelse, uanset rollen på siden"
+
+#: admin/class-fep-admin-settings.php:520
+#: admin/class-fep-admin-settings.php:531
+msgid "Invalid value for %s"
+msgstr "Ugyldig værdig for '%s'"
+
+#: admin/class-fep-admin-settings.php:499
+msgid "Provide valid email address for %s"
+msgstr "Angiv gyldig e-mail adresse til %s"
+
+#: admin/class-fep-admin-settings.php:598
+msgid "General"
+msgstr "Generelt"
+
+#: admin/class-fep-admin-settings.php:606 includes/class-fep-form.php:61
+msgid "Message"
+msgstr "Besked"
+
+#: admin/class-fep-admin-settings.php:610
+msgid "Announcement"
+msgstr "Meddelelse"
+
+#: admin/class-fep-admin-settings.php:618
+msgid "Security"
+msgstr "Sikkerhed"
+
+#: admin/class-fep-admin-settings.php:614
+msgid "Emails"
+msgstr "Emails"
+
+#: admin/class-fep-admin-settings.php:622
+msgid "Message Box"
+msgstr "Beskedboks"
+
+#: admin/class-fep-admin-settings.php:716
+msgid "Some Useful Links"
+msgstr "Nogle nyttige links"
+
+#: admin/class-fep-admin-settings.php:700
+msgid "Plugin Author"
+msgstr "Plugin Forfatter"
+
+#: admin/class-fep-update.php:31 admin/class-fep-update.php:42
+#: admin/class-fep-update.php:75
+msgid "Update"
+msgstr "Updatering"
+
+#: admin/class-fep-update.php:53 admin/class-fep-update.php:59
+#: admin/class-fep-update.php:106
+msgid "You are up to date, No need to update."
+msgstr "Du er ajour, ingen grund til at opdatere."
+
+#: admin/class-fep-update.php:67
+msgid "Previous version"
+msgstr "Tidligere version"
+
+#: admin/class-fep-update.php:69
+msgid "3.1"
+msgstr "3.1"
+
+#: admin/class-fep-update.php:70
+msgid "3.2"
+msgstr "3.2"
+
+#: admin/class-fep-update.php:71
+msgid "3.3"
+msgstr "3.3"
+
+#: admin/class-fep-update.php:194
+msgid "Successfully updated."
+msgstr "Opdateret"
+
+#: admin/class-fep-update.php:197
+msgid "Please refresh this page and update again."
+msgstr "Genindlæs siden og opdater igen"
+
+#: admin/class-fep-pro-info.php:324 functions.php:226
+#: includes/class-fep-form.php:307
+msgid "Remove"
+msgstr "Fjern"
+
+#: functions.php:228
+msgid "Maximum file allowed"
+msgstr "Maksimalt antal filer tilladt"
+
+#: functions.php:334 functions.php:1218
+msgid "Error"
+msgstr "Fejl"
+
+#: functions.php:553
+msgid "Unpublished"
+msgstr "Ikke udgivet"
+
+#: functions.php:559
+msgid "%s ago"
+msgstr "%s siden"
+
+#: functions.php:561
+msgid "F j, Y g:i a"
+msgstr "F j, Y g: i a"
+
+#: includes/class-fep-attachment.php:139
+msgid "Invalid token"
+msgstr "Ugyldig Token"
+
+#: includes/class-fep-attachment.php:142 includes/class-fep-attachment.php:145
+msgid "No attachments found"
+msgstr "Ingen vedhæftninger fundet"
+
+#: includes/class-fep-attachment.php:151 includes/class-fep-attachment.php:153
+#: includes/class-fep-attachment.php:155
+msgid "You have no permission to download this attachment."
+msgstr "Du har ikke tilladelse til at downloade denne vedhæftning."
+
+#: includes/class-fep-attachment.php:166
+msgid "Attachment already deleted"
+msgstr "Vedhæftningen er allerede slettet"
+
+#: functions.php:1004
+msgid "No matches found"
+msgstr "Intet fundet"
+
+#: functions.php:1032 includes/fep-widgets.php:121 templates/header.php:20
+msgid "%s unread message"
+msgid_plural "%s unread messages"
+msgstr[0] "%s ulæst besked"
+msgstr[1] "%s ulæste beskeder"
+
+#: functions.php:1037 includes/fep-widgets.php:131 templates/header.php:20
+msgid "%s unread announcement"
+msgid_plural "%s unread announcements"
+msgstr[0] "%s ulæst meddelelse"
+msgstr[1] "%s ulæste meddelelser"
+
+#: functions.php:1046 templates/header.php:20
+msgid "and"
+msgstr "og"
+
+#: functions.php:1040 includes/fep-widgets.php:116 templates/header.php:20
+msgid "You have"
+msgstr "Du har"
+
+#: includes/class-fep-form.php:389 includes/fep-class.php:161
+#: includes/fep-class.php:177
+msgid "Invalid Token. Please try again!"
+msgstr "Ugyldig Token. Prøv venligst igen!"
+
+#: includes/class-fep-announcement.php:216
+msgid "%s announcement"
+msgid_plural "%s announcements"
+msgstr[0] "%s Meddelelse"
+msgstr[1] "%s Meddelelser"
+
+#: includes/class-fep-announcement.php:218 includes/class-fep-message.php:332
+msgid "successfully deleted."
+msgstr "Slettet"
+
+#: includes/class-fep-announcement.php:256 includes/class-fep-message.php:426
+msgid "Read"
+msgstr "Læs"
+
+#: includes/class-fep-announcement.php:246 includes/class-fep-message.php:407
+msgid "Delete"
+msgstr "Slet"
+
+#: includes/class-fep-announcement.php:257
+#: includes/class-fep-announcement.php:290 includes/class-fep-message.php:427
+#: includes/class-fep-message.php:464
+msgid "Unread"
+msgstr "Ulæst"
+
+#: includes/class-fep-announcement.php:258
+msgid "After i registered"
+msgstr "Efter jeg registrerede mig"
+
+#: includes/class-fep-announcement.php:268 includes/class-fep-message.php:439
+msgid "Title"
+msgstr "Titel"
+
+#: includes/class-fep-announcement.php:267
+msgid "Date"
+msgstr "Dato"
+
+#: includes/class-fep-announcement.php:266 includes/class-fep-message.php:436
+msgid "Checkbox"
+msgstr "Checkboks"
+
+#: templates/announcement_box.php:10
+msgid "No announcements found."
+msgstr "Ingen Meddelelser fundet."
+
+#: templates/announcement_box.php:21 templates/messagebox.php:21
+msgid "Bulk action"
+msgstr "Vælg massehandling"
+
+#: templates/announcement_box.php:29 templates/messagebox.php:29
+msgid "Apply"
+msgstr "Anvend"
+
+#: templates/announcement_box.php:35 templates/messagebox.php:35
+msgid "Show all"
+msgstr "Vis alle"
+
+#: templates/announcement_box.php:57
+msgid "No announcements found. Try different filter."
+msgstr "Ingen meddelelser fundet. Prøv at ændre søgekriterier."
+
+#: includes/class-fep-cpt.php:51
+msgctxt "post type general name"
+msgid "Messages"
+msgstr "Beskeder"
+
+#: includes/class-fep-attachment.php:119
+msgid "Attachments"
+msgstr "Vedhæftninger"
+
+#: includes/class-fep-announcement.php:326 templates/view_announcement.php:27
+msgid "You do not have permission to view this announcement!"
+msgstr "Du har ikke tilladelse til at se denne meddelelse!"
+
+#: includes/class-fep-cpt.php:53 includes/class-fep-cpt.php:54
+#: includes/class-fep-cpt.php:56 includes/class-fep-emails.php:70
+#: includes/class-fep-menu.php:41
+msgid "New Message"
+msgstr "Ny besked"
+
+#: includes/class-fep-cpt.php:52
+msgctxt "post type singular name"
+msgid "Message"
+msgstr "Besked"
+
+#: includes/class-fep-cpt.php:55
+msgid "Edit Message"
+msgstr "Rediger besked"
+
+#: includes/class-fep-cpt.php:57
+msgid "All Messages"
+msgstr "Alle beskeder"
+
+#: includes/class-fep-cpt.php:59
+msgid "Search Message"
+msgstr "Søg beskeder"
+
+#: includes/class-fep-cpt.php:58
+msgid "View Message"
+msgstr "Se besked"
+
+#: includes/class-fep-cpt.php:60
+msgid "No Messages found"
+msgstr "Ingen beskeder fundet"
+
+#: includes/class-fep-cpt.php:61
+msgid "No Messages found in Trash"
+msgstr "Ingen beskeder fundet i papirkurven"
+
+#: includes/class-fep-cpt.php:86
+msgctxt "post type general name"
+msgid "Announcements"
+msgstr "Meddelelser"
+
+#. #-#-#-#-#  front-end-pm-code.pot (Front End PM 4.8)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: includes/class-fep-cpt.php:63 includes/class-fep-cpt.php:98
+msgid "Front End PM"
+msgstr "Front end PM"
+
+#: includes/class-fep-cpt.php:87
+msgctxt "post type singular name"
+msgid "Announcement"
+msgstr "Meddelelse"
+
+#: includes/class-fep-cpt.php:90
+msgid "Edit Announcement"
+msgstr "Rediger Meddelelse"
+
+#: includes/class-fep-cpt.php:88 includes/class-fep-cpt.php:89
+#: includes/class-fep-cpt.php:91 includes/class-fep-emails.php:158
+msgid "New Announcement"
+msgstr "Ny Meddelelse"
+
+#: includes/class-fep-cpt.php:92
+msgid "All Announcements"
+msgstr "Alle Meddelelser"
+
+#: includes/class-fep-cpt.php:93
+msgid "View Announcement"
+msgstr "Vis Meddelelser"
+
+#: includes/class-fep-cpt.php:95
+msgid "No Announcements found"
+msgstr "Ingen Meddelelser fundet"
+
+#: includes/class-fep-cpt.php:94
+msgid "Search Announcement"
+msgstr "Søg meddelselser"
+
+#: includes/class-fep-cpt.php:96
+msgid "No Announcements found in Trash"
+msgstr "Ingen Meddelelser fundet i papirkurven"
+
+#: includes/class-fep-cpt.php:145
+msgid "Message To"
+msgstr "Besked til"
+
+#: admin/class-fep-pro-info.php:46 includes/class-fep-cpt.php:181
+msgid "Sender"
+msgstr "Afsender"
+
+#: includes/class-fep-cpt.php:153
+msgid "Announcement to roles"
+msgstr "Meddelelse til roller"
+
+#: includes/class-fep-cpt.php:305 includes/class-fep-cpt.php:307
+msgid "View"
+msgstr "Vis"
+
+#: includes/class-fep-cpt.php:250
+msgid "Can NOT be edited once published"
+msgstr "Kan IKKE ændres når den er offentliggjort"
+
+#: includes/class-fep-cpt.php:313
+msgid "From"
+msgstr "Fra"
+
+#: includes/class-fep-cpt.php:314 includes/class-fep-cpt.php:363
+#: includes/class-fep-form.php:32
+msgid "To"
+msgstr "Til"
+
+#: includes/class-fep-cpt.php:340
+msgid "No Participants"
+msgstr "Ingen deltagere"
+
+#: includes/class-fep-cpt.php:327
+msgid "No Parent"
+msgstr "Ingen overordnet besked"
+
+#: includes/class-fep-cpt.php:315
+msgid "Parent"
+msgstr "Overordnet besked"
+
+#: includes/class-fep-cpt.php:365
+msgid "Deleted Count"
+msgstr "Antal slettet"
+
+#: includes/class-fep-cpt.php:364
+msgid "Read Count"
+msgstr "Antal læst"
+
+#: includes/class-fep-directory.php:30
+msgid "Directory"
+msgstr "Brugeroversigten"
+
+#: includes/class-fep-directory.php:41
+msgid "You do not have permission to access directory!"
+msgstr "Du har ikke tilladelse til at se brugeroversigten!"
+
+#: templates/directory.php:21
+msgid "Total Users"
+msgstr "Antal brugere"
+
+#: includes/class-fep-form.php:576 templates/directory.php:27
+#: templates/newmessage_form.php:7
+msgid "Send Message"
+msgstr "Send besked"
+
+#: templates/directory.php:34
+msgid "No users found."
+msgstr "Ingen brugere fundet"
+
+#: includes/class-fep-emails.php:71
+msgid "You have received a new message in"
+msgstr "Du har modtaget en ny besked i"
+
+#: includes/class-fep-emails.php:73
+msgid "From: %s"
+msgstr "Fra: %s"
+
+#: includes/class-fep-emails.php:74
+msgid "Subject: %s"
+msgstr "Emne: %s"
+
+#: includes/class-fep-emails.php:75
+msgid "Please Click the following link to view full Message."
+msgstr "Klik på dette link for at læse hele beskeden."
+
+#: includes/class-fep-emails.php:159
+msgid "A new Announcement is Published in "
+msgstr "En ny meddelelse er udgivet på"
+
+#: includes/class-fep-emails.php:161
+msgid "Title: %s"
+msgstr "Titel: %s"
+
+#: includes/class-fep-emails.php:162
+msgid "Please Click the following link to view full Announcement."
+msgstr "Klik på dette link for at læse hele beskeden."
+
+#: includes/class-fep-form.php:37
+msgid "Username of the receipent."
+msgstr "Brugernavn på modtager"
+
+#: includes/class-fep-form.php:36
+msgid "Name of the receipent."
+msgstr "Navn på modtager"
+
+#: admin/class-fep-pro-info.php:32 includes/class-fep-form.php:46
+#: includes/class-fep-form.php:50
+msgid "Subject"
+msgstr "Emne"
+
+#: includes/class-fep-form.php:86
+msgid "Allow others to send me messages?"
+msgstr "Tillad andre at sende mig interne beskeder"
+
+#: includes/class-fep-form.php:92
+msgid "Email me when I get new messages?"
+msgstr "Send mig en e-mail når jeg modtager en ny besked"
+
+#: includes/class-fep-form.php:98
+msgid "Email me when new announcement is published?"
+msgstr "Send mig en e-mail ved nye meddelelser?"
+
+#: includes/class-fep-form.php:348
+msgid "%s required."
+msgstr "%s er påkrævet."
+
+#: includes/class-fep-form.php:310
+msgid "Add new field"
+msgstr "Tilføj nyt felt"
+
+#: includes/class-fep-form.php:352
+msgid "%s can not be changed."
+msgstr "%s kan ikke ændres."
+
+#: includes/class-fep-form.php:360
+msgid "%s maxlength %d."
+msgstr "%s max længde %d."
+
+#: includes/class-fep-form.php:356
+msgid "%s minlength %d."
+msgstr "%s minimum længde %d."
+
+#: includes/class-fep-form.php:378
+msgid "Please provide valid email address for %s."
+msgstr "Indsæt en gyldig e-mail adresse til %s"
+
+#: includes/class-fep-form.php:410 includes/class-fep-form.php:419
+msgid "%s does not want to receive messages!"
+msgstr "%s ønsker ikke at modtage beskeder!"
+
+#: includes/class-fep-form.php:384
+msgid "%s is not a valid number."
+msgstr "%s er ikke et gyldig nummer."
+
+#: includes/class-fep-form.php:422
+msgid "You can not message yourself!"
+msgstr "Du kan ikke sende en besked til dig selv!"
+
+#: includes/class-fep-form.php:413
+msgid "Invalid receiver \"%s\"."
+msgstr "Ugyldig modtager \"%s\"."
+
+#: includes/class-fep-form.php:433
+msgid "Invalid parent ID!"
+msgstr "Ugyldig ID!"
+
+#: includes/class-fep-form.php:427
+msgid "You must enter a valid recipient!"
+msgstr "Du skal indtaste en gyldig modtager!"
+
+#: includes/class-fep-form.php:445 includes/class-fep-form.php:458
+msgid "Invalid value for %s."
+msgstr "Ugyldig værdig for '%s'"
+
+#: includes/class-fep-form.php:435
+msgid "You do not have permission to send this message!"
+msgstr "Du har ikke rettigheder til at sende ny besked!"
+
+#: includes/class-fep-form.php:479
+msgid "Attachment (%s) file is too big"
+msgstr "Vedhæftningen (%s) er for stor."
+
+#: includes/class-fep-form.php:484
+msgid "Invalid attachment file type. Allowed Types are (%s)"
+msgstr "Ugyldig fil format, du kan kun vedhæfte disse fil typer (%s)"
+
+#: includes/class-fep-form.php:572
+msgid "Save Changes"
+msgstr "Gem ændringer"
+
+#: includes/class-fep-form.php:574
+msgid "Reply"
+msgstr "Svar"
+
+#: includes/class-fep-menu.php:46
+msgid "Message Box%s"
+msgstr "Beskedboks%s"
+
+#: includes/class-fep-menu.php:56
+msgid "Announcement%s"
+msgstr "Beskeder%s"
+
+#: includes/class-fep-message.php:56
+msgid "Please wait at least %s between messages."
+msgstr "Vent mindst %s mellem afsendelse af beskeder."
+
+#: includes/class-fep-message.php:56
+msgid "%s minute"
+msgid_plural "%s minutes"
+msgstr[0] "%s minut"
+msgstr[1] "%s minutter"
+
+#: includes/class-fep-message.php:69
+msgid "Your message box is full. Please delete some messages."
+msgstr "Din beskedboks er fuld, slet venligst nogle af dine beskeder for at gøre plads"
+
+#: includes/class-fep-message.php:336
+msgid "successfully marked as read."
+msgstr "markeret som læst."
+
+#: includes/class-fep-message.php:340
+msgid "successfully marked as unread."
+msgstr "arkeret som ulæst"
+
+#: includes/class-fep-message.php:344
+msgid "successfully archived."
+msgstr "arkiveret."
+
+#: includes/class-fep-message.php:348
+msgid "successfully restored."
+msgstr "gendannet."
+
+#: includes/class-fep-message.php:408
+msgid "Mark as read"
+msgstr "Marker som læst"
+
+#: includes/class-fep-message.php:409
+msgid "Mark as unread"
+msgstr "Markér som ulæst"
+
+#: includes/class-fep-message.php:413
+msgid "Restore"
+msgstr "Gendan"
+
+#: includes/class-fep-message.php:415 includes/class-fep-message.php:428
+msgid "Archive"
+msgstr "Arkiv"
+
+#: includes/class-fep-message.php:425
+msgid "Sent"
+msgstr "Sendt"
+
+#: includes/class-fep-message.php:424
+msgid "Inbox"
+msgstr "Indbakke"
+
+#: includes/class-fep-message.php:437
+msgid "Avatar"
+msgstr "Avatar"
+
+#: includes/fep-class.php:120 includes/fep-class.php:143
+msgid "Message successfully sent."
+msgstr "Beskeden er sendt."
+
+#: includes/fep-class.php:44
+msgid "You do not have permission to access message system"
+msgstr "Du har ikke rettigheder til at benytte beskedsystemet"
+
+#: includes/class-fep-message.php:438
+msgid "Author"
+msgstr "Forfatter"
+
+#: includes/fep-class.php:122 includes/fep-class.php:145
+msgid "Message successfully sent and waiting for admin moderation."
+msgstr "Beskeden er sendt og venter på admins godkendelse"
+
+#: includes/fep-class.php:192
+msgid "Settings successfully saved."
+msgstr "Indstillinger gemt."
+
+#: includes/fep-class.php:125 includes/fep-class.php:148
+msgid "Something wrong. Please try again."
+msgstr "Noget gik galt, prøv venligst igen"
+
+#: includes/fep-class.php:229
+msgid "unlimited"
+msgstr "ubegrænset"
+
+#: templates/header.php:22
+msgid "Message box size"
+msgstr "Besked boks størrelse"
+
+#: includes/fep-widgets.php:114 templates/header.php:19
+msgid "Welcome"
+msgstr "Velkommen"
+
+#: templates/header.php:22
+msgid "%s of %s"
+msgstr "%s af %s"
+
+#: templates/messagebox.php:10
+msgid "No messages found."
+msgstr "Ingen beskeder fundet"
+
+#: templates/messagebox.php:57
+msgid "No messages found. Try different filter."
+msgstr "Ingen beskeder er fundet, prøv et andet søge kriterie"
+
+#: templates/settings.php:8
+msgid "Set your preferences below"
+msgstr "Juster dine indstillinger herunder"
+
+#: templates/newmessage_form.php:10
+msgid "You do not have permission to send new message!"
+msgstr "Du har ikke rettigheder til at sende ny besked!"
+
+#: includes/fep-class.php:310 templates/viewmessage.php:55
+msgid "You do not have permission to view this message!"
+msgstr "Du har ikke rettigheder til at se denne besked!"
+
+#: templates/reply_form.php:8
+msgid "You do not have permission to send reply to this message!"
+msgstr "Du har ikke rettigheder til at sende beskeden"
+
+#: includes/fep-widgets.php:15 includes/fep-widgets.php:48
+msgid "FEP Menu Widget"
+msgstr "FEP Menu Widget"
+
+#: includes/fep-widgets.php:16
+msgid "Front End PM Menu Widget"
+msgstr "Front End PM Menu Widget"
+
+#: includes/fep-widgets.php:91 includes/fep-widgets.php:150
+msgid "FEP Text Widget"
+msgstr "FEP Tekst Widget"
+
+#: includes/fep-widgets.php:51 includes/fep-widgets.php:155
+#: includes/fep-widgets.php:250
+msgid "Title:"
+msgstr "Titel:"
+
+#: includes/fep-widgets.php:92
+msgid "Front End PM Text Widget"
+msgstr "Front End PM Tekst Widget"
+
+#: includes/fep-widgets.php:126
+msgid " and"
+msgstr " og"
+
+#: includes/fep-widgets.php:160
+msgid "Show Messagebox?"
+msgstr "Vis besked boks"
+
+#: includes/fep-widgets.php:164
+msgid "Show Announcement?"
+msgstr "Vis meddelelser"
+
+#: includes/fep-widgets.php:207
+msgid "Front End PM Empty Widget"
+msgstr "Front End PM tom Widget"
+
+#: includes/fep-widgets.php:206 includes/fep-widgets.php:246
+msgid "FEP Empty Widget"
+msgstr "FEP tom Widget"
+
+#: includes/fep-widgets.php:256
+msgid "Display help to configure this widget in front end?"
+msgstr "Vis hjælp for at konfigurere widget i frontend"
+
+#. Description of the plugin/theme
+msgid "Front End PM is a Private Messaging system and a secure contact form to your WordPress site.This is full functioning messaging system fromfront end. The messaging is done entirely through the front-end of your site rather than the Dashboard. This is very helpful if you want to keep your users out of the Dashboard area."
+msgstr ""
+"Front End PM er et Private Messaging system til dit WordPress site. Det er også et fuldt fungerende messaging system i din Wordpress fronend. Messaging sker udelukkende gennem din Wordpress Frontend og ikke via WP-Dashboard.\n"
+"Dette er nyttigt, hvis du ønsker at holde dine brugere ud af Dashboard området."
+
+#: admin/class-fep-admin-settings.php:33
+msgid "Extensions"
+msgstr "Udvidelser"
+
+#. #-#-#-#-#  front-end-pm-code.pot (Front End PM 4.8)  #-#-#-#-#
+#. Plugin URI of the plugin/theme
+#. #-#-#-#-#  front-end-pm-code.pot (Front End PM 4.8)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "https://www.shamimsplugins.com/wordpress/contact-us/"
+msgstr "https://www.shamimsplugins.com/wordpress/contact-us/"
+
+#. Author of the plugin/theme
+msgid "Shamim"
+msgstr "Shamim"
+
+#: admin/class-fep-admin-settings.php:186
+msgid "Remove Data on Uninstall?"
+msgstr "Fjern alle data ved afinstallering"
+
+#: admin/extensions.php:9
+msgid "Front End PM - Extensions"
+msgstr "Front End PM - Udvidelser"
+
+#: admin/class-fep-admin-settings.php:187
+msgid "Check this box if you would like Front End PM to completely remove all of its data when the plugin is deleted."
+msgstr "Markér dette felt, hvis du ønsker at Frontend PM skal fjerne alle sine data, når plugin slettes."
+
+#: admin/extensions.php:47
+msgid "Installed"
+msgstr "Installeret"
+
+#: admin/extensions.php:49
+msgid "View Details"
+msgstr "Se detaljer"
+
+#: includes/fep-class.php:94
+msgid "You must <a href='%s'>login</a> to view your message."
+msgstr "Du skal være<a href='%s'>logget ind</a> for at se dine beskeder"
+
+#: templates/viewmessage.php:29
+msgid "Participants"
+msgstr "Deltagere"
+
+#: admin/class-fep-admin-settings.php:196
+msgid "Hide Autosuggestion"
+msgstr "Skjul autoudfyldelse"
+
+#: admin/class-fep-admin-settings.php:602
+msgid "Recipient"
+msgstr "Modtager"
+
+#: admin/class-fep-pro-info.php:35
+msgid "Full Message"
+msgstr "Hele beskeden"
+
+#: admin/class-fep-pro-info.php:38
+msgid "URL of message"
+msgstr "ULR hvor beskeden er"
+
+#: admin/class-fep-pro-info.php:42
+msgid "URL of announcement"
+msgstr "URL i meddelelse"
+
+#: admin/class-fep-pro-info.php:49
+msgid "Receiver"
+msgstr "Modtager"
+
+#: admin/class-fep-pro-info.php:52
+msgid "Website title"
+msgstr "Hjemmesides navn"
+
+#: admin/class-fep-pro-info.php:55
+msgid "Website URL"
+msgstr "Hjemmeside URL"
+
+#: admin/class-fep-pro-info.php:91
+msgid "New Message email"
+msgstr "Ny e-mail"
+
+#: admin/class-fep-pro-info.php:105
+msgid "Announcement email"
+msgstr "Meddelelses e-mail"
+
+#: admin/class-fep-pro-info.php:98
+msgid "Reply Message email"
+msgstr "Svar meddelsels e-mail"
+
+#: admin/class-fep-pro-info.php:112
+msgid "Multiple Recipients"
+msgstr "Flere modtagere"
+
+#: admin/class-fep-pro-info.php:119
+msgid "Only Admins"
+msgstr "Kun administratorer"
+
+#: admin/class-fep-pro-info.php:161
+msgid "Following features only available in PRO version. <a href=\"%s\" target=\"_blank\">Upgrade to PRO</a>"
+msgstr "Disse funktioner er kun tilgængelige i PRO version. <a href=\"%s\" target=\"_blank\">Opgrader til PRO her</a>"
+
+#: admin/class-fep-pro-info.php:203
+msgid "New message content."
+msgstr "Indhold"
+
+#: admin/class-fep-pro-info.php:208
+msgid "Reply subject."
+msgstr "Svar emne."
+
+#: admin/class-fep-pro-info.php:222
+msgid "Announcement sending Interval in minutes."
+msgstr "Meddelelses interval i minutter."
+
+#: admin/class-fep-pro-info.php:221
+msgid "Sending Interval."
+msgstr "Meddelelses interval"
+
+#: admin/class-fep-pro-info.php:215
+msgid "Reply content."
+msgstr "Svar indhold."
+
+#: admin/class-fep-pro-info.php:229
+msgid "Announcement emails send per interval."
+msgstr "Meddelelses interval."
+
+#: admin/class-fep-pro-info.php:228
+msgid "Emails send per interval."
+msgstr "E-mails som sendes per interval."
+
+#: admin/class-fep-pro-info.php:250
+msgid "Can users send message to other users."
+msgstr "Kan brugerne sende besked til andre brugere."
+
+#: admin/class-fep-pro-info.php:241
+msgid "Announcement content."
+msgstr "Indhold"
+
+#: admin/class-fep-pro-info.php:249
+msgid "Can send to users"
+msgstr "Kan sende til brugerne"
+
+#: admin/class-fep-pro-info.php:266
+msgid "Max recipients"
+msgstr "Maks modtagere"
+
+#: admin/class-fep-pro-info.php:265
+msgid "Maximum recipients per message."
+msgstr ""
+"Maksimalt antal \n"
+"modtagere pr besked."
+
+#: admin/class-fep-pro-info.php:272
+msgid "How message will be sent to recipients"
+msgstr "Hvordan besked vil blive sendt til modtagere"
+
+#: admin/class-fep-pro-info.php:273
+msgid "Message type"
+msgstr "Beskedtype"
+
+#: admin/class-fep-pro-info.php:275
+msgid "Same Message"
+msgstr "Samme besked"
+
+#: admin/class-fep-pro-info.php:276
+msgid "Separate Message"
+msgstr "Separat besked"
+
+#: admin/class-fep-pro-info.php:292
+msgid "Can users send message to admin."
+msgstr "Kan brugerne sende besked til admin."
+
+#: admin/class-fep-pro-info.php:293
+msgid "Can send to admin"
+msgstr "Kan sende til admin"
+
+#: admin/class-fep-pro-info.php:299
+msgid "Do not forget to save."
+msgstr "Glem ikke at gemme."
+
+#: admin/class-fep-pro-info.php:306
+msgid "Select how you want to see in frontend."
+msgstr "Vælg, hvordan du ønsker at se i frontend."
+
+#: admin/class-fep-pro-info.php:307
+msgid "Show in front end as"
+msgstr "Vis i frontend som"
+
+#: admin/class-fep-pro-info.php:309
+msgid "Select"
+msgstr "Vælg"
+
+#: admin/class-fep-pro-info.php:310
+msgid "Radio"
+msgstr "Radioknap"
+
+#: admin/class-fep-pro-info.php:322
+msgid "Display as"
+msgstr "Vis som"
+
+#: admin/class-fep-pro-info.php:323
+msgid "Username"
+msgstr "Brugernavn"
+
+#: admin/class-fep-pro-info.php:326
+msgid "Add More"
+msgstr "Tilføj mere"
+
+#: admin/class-fep-admin-settings.php:106
+msgid "Wp Editor (Teeny)"
+msgstr "Wp Editor (Teeny)"
+
+#: admin/class-fep-admin-settings.php:732
+msgid "Front End PM PRO"
+msgstr "Front End PM PRO"
+
+#: admin/class-fep-pro-info.php:84
+msgid "Email Piping"
+msgstr "Email Piping"
+
+#: admin/class-fep-pro-info.php:175
+msgid "Enable"
+msgstr "Aktivér"
+
+#: admin/class-fep-pro-info.php:176
+msgid "Enable email piping?"
+msgstr "Aktiver e-mail piping?"
+
+#: admin/class-fep-pro-info.php:182
+msgid "Use this email as email piping."
+msgstr "Brug denne e-mail som piping e-mail"
+
+#: admin/class-fep-pro-info.php:183
+msgid "Piping Email"
+msgstr "Piping Email"
+
+#: admin/class-fep-pro-info.php:190
+msgid "Clean reply quote"
+msgstr "Ryd citat..."
+
+#: admin/class-fep-pro-info.php:191
+msgid "Clean reply quote from email?"
+msgstr "Svar uden at citere..."
+
+#: admin/class-fep-pro-info.php:258
+msgid "Can admin send to users"
+msgstr "Kan admin sende til brugerne"
+
+#: admin/class-fep-pro-info.php:259
+msgid "Can admin send new message to other users."
+msgstr "Kan admin sende beskeder til andre brugere."
+
+#: admin/class-fep-pro-info.php:284
+msgid "Read Receipt"
+msgstr "Læs Kvittering"
+
+#: admin/class-fep-pro-info.php:285
+msgid "Show read receipt bottom of every message?"
+msgstr "Vis \"læst\" kvittering i bunden af ​hver besked?"

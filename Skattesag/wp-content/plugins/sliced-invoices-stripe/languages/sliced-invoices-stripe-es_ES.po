@@ -1,0 +1,74 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sliced Invoices Stripe\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-12 20:34+0000\n"
+"PO-Revision-Date: 2017-01-12 20:37+0000\n"
+"Last-Translator: Lolo Marchal <info@chipweb.es>\n"
+"Language-Team: Spanish (Spain)\n"
+"Language: es-ES\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: sliced-invoices-stripe.php:150
+msgid "Stripe Secret Key"
+msgstr "Clave Secrete de Stripe (Secret Key)"
+
+#: sliced-invoices-stripe.php:151 sliced-invoices-stripe.php:157
+msgid ""
+"You will find your Secret Key under \"Your Account\" and then \"API Keys\"."
+msgstr ""
+"Encontrarás esta clave si vas a \"Your Account\" y luego a \"API Keys\" en "
+"tu cuenta de Stripe"
+
+#: sliced-invoices-stripe.php:156
+msgid "Stripe Publishable Key"
+msgstr "Clave Pública de Stripe (Publishable Key)"
+
+#: sliced-invoices-stripe.php:262
+msgid "Card Number"
+msgstr "Número de la Tarjeta"
+
+#: sliced-invoices-stripe.php:270
+msgid "CVC"
+msgstr "CVC"
+
+#: sliced-invoices-stripe.php:281
+msgid "Expiration Month"
+msgstr "Mes de Caducidad"
+
+#: sliced-invoices-stripe.php:288
+msgid "Expiration Year"
+msgstr "Año de Caducidad"
+
+#: sliced-invoices-stripe.php:299
+#, php-format
+msgid "Pay %s Now"
+msgstr "Pagar %s Ahora"
+
+#. Name of the plugin
+msgid "Sliced Invoices Stripe"
+msgstr "Sliced Invoices Stripe"
+
+#. Description of the plugin
+msgid ""
+"Accept invoice payments using Stripe payment gateway. Requirements: The "
+"Sliced Invoices Plugin"
+msgstr ""
+"Aceptar pagos de facturas usando la pasarela de pagos Stripe. Requisitos: "
+"Plugin \"Sliced Invoices\""
+
+#. URI of the plugin
+msgid "https://slicedinvoices.com/extensions/stripe-payment-gateway/"
+msgstr "https://slicedinvoices.com/extensions/stripe-payment-gateway/"
+
+#. Author of the plugin
+msgid "Sliced Invoices"
+msgstr "Sliced Invoices"
+
+#. Author URI of the plugin
+msgid "https://slicedinvoices.com/"
+msgstr "https://slicedinvoices.com/"

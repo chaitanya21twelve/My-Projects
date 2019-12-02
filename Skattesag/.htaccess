@@ -1,0 +1,16 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /skattesag/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /skattesag/index.php [L]
+
+RewriteCond %{HTTP_COOKIE} !^.*wordpress_logged_in.*$ [NC]
+RewriteCond %{REQUEST_URI} ^(.*/wp-content/uploads/.+)$ [NC]
+RewriteRule ^(.*)$ - [R=403,L]
+</IfModule>
+
+# END WordPress
